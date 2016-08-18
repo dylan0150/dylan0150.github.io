@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript" src="js/model/ShopSwitcher.js"></script>
+    <script type="text/javascript" src="js/model/Shop.js"></script>
+    <script type="text/javascript" src="js/model/Hero.js"></script>
+    <script type="text/javascript" src="js/model/Location.js"></script>
+    <script type="text/javascript" src="js/model/Enemy.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </head>
+  <body>
+
+  <button onclick="newUser();">New Game</button>
+
+<div class="row">
+  <div id="heroprofile" class="col-sm-4">
+    <h2 id="heroname"></h2>
+    <h4 id="herostats"></h4>
+    <button id="usehealthpot" onclick="User.usehealthpotion();">Use Health Potion</button>
+    <button id="usemanapot" onclick="User.usemanapotion();">Use Mana Potion</button>
+  </div>
+
+  <div id="exploration" class="col-sm-4">
+    <button id="explorewild" onclick="randomEncounterWild();" class="hiddenatstart">Explore the Wilderness</button>
+    <button id="exploretown" onclick="randomEncounterTown();">Explore the Town</button>
+    <button id="explorecave" onclick="randomEncounterCave();">Explore the Cave</button>
+    <button id="exploretower" onclick="randomEncounterTower();">Explore the Tower</button>
+  </div>
+
+  <div id="monsterprofile" class="col-sm-4">
+    <h2 id="monstername"></h2>
+    <p id="monsterstats"></p>
+  </div>
+</div>
+
+<div class="row">
+  <div id="spellbookprofile" class="col-sm-4">
+    <h2 id="spellbook"></h2>
+    <button id="spell1button" class="spell1class" onclick="User.castSpell(User.spellbook[0][0]);"></button>
+    <p id="spell1description"></p>
+    <p id="spell1damage"></p>
+    <p id="spell1cost"></p>
+    <button id="spell2button" class="spell2class" onclick="User.castSpell(User.spellbook[1][0]);"></button>
+    <p id="spell2description"></p>
+    <p id="spell2damage"></p>
+    <p id="spell2cost"></p>
+    <button id="spell3button" class="spell3class" onclick="User.castSpell(User.spellbook[2][0]);"></button>
+    <p id="spell3description"></p>
+    <p id="spell3damage"></p>
+    <p id="spell3cost"></p>
+    <button id="spell4button" class="spell4class" onclick="User.castSpell(User.spellbook[3][0]);"></button>
+    <p id="spell4description"></p>
+    <p id="spell4damage"></p>
+    <p id="spell4cost"></p>
+    <button id="spell5button" class="spell5class" onclick="User.castSpell(User.spellbook[4][0]);"></button>
+    <p id="spell5description"></p>
+    <p id="spell5damage"></p>
+    <p id="spell5cost"></p>
+    <button id="spell6button" class="spell6class" onclick="User.castSpell(User.spellbook[5][0]);"></button>
+    <p id="spell6description"></p>
+    <p id="spell6damage"></p>
+    <p id="spell6cost"></p>
+    <button id="spell7button" class="spell7class" onclick="User.castSpell(User.spellbook[6][0]);"></button>
+    <p id="spell7description"></p>
+    <p id="spell7damage"></p>
+    <p id="spell7cost"></p>
+  </div>
+
+  <div id="backpackprofile" class="col-sm-4">
+    <h2 id="backpack"></h2>
+    <p id="consumable"></p>
+    <p id="item1"></p>
+    <p id="item2"></p>
+    <p id="item3"></p>
+    <p id="item4"></p>
+    <p id="item5"></p>
+    <p id="item6"></p>
+    <p id="item7"></p>
+    <p id="item8"></p>
+    <p id="item9"></p>
+    <p id="item10"></p>
+    <p id="item11"></p>
+    <p id="item12"></p>
+    <p id="item13"></p>
+    <p id="item14"></p>
+    <p id="item15"></p>
+    <p id="item16"></p>
+    <p id="item17"></p>
+    <p id="item18"></p>
+    <p id="item19"></p>
+    <p id="item20"></p>
+  </div>
+
+  <div id="shop" class="col-sm-4">
+    <h4 id="shopname"></h4>
+    <button onclick="switchShop.xswitch();" class ="hiddenbeforefirstshop1" id="shopchangebutton">Change Shop</button>
+    <button onclick="switchShop.openCurrentShop();" class="hiddenbeforefirstshop2" id="shopopenbutton">Open Shop</button>
+    <button onclick="switchShop.closeCurrentShop();" class ="hiddenbeforefirstshop3" id="shopclosebutton">Close Shop</button>
+    <p id="shopitem1"></p>
+    <p id="shopitem2"></p>
+    <p id="shopitem3"></p>
+    <p id="shopitem4"></p>
+    <p id="shopitem5"></p>
+    <p id="shopitem6"></p>
+    <p id="shopitem7"></p>
+    <p id="shopitem8"></p>
+    <p id="shopitem9"></p>
+    <p id="shopitem10"></p>
+    <button onclick="switchShop.buyitem();" class="hiddenbeforefirstshop4" id="shopbuybutton">Buy Item</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+
+</html>

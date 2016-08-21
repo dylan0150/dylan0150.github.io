@@ -6,6 +6,10 @@ app.config(function ($routeProvider) {
       controller: 'MainController',
       templateUrl: 'page/main.html'
     })
+    .when('/main', {
+      controller: 'MainController',
+      templateUrl: 'page/main.html'
+    })
     .when('/myblog', {
       controller: 'BlogController',
       templateUrl: 'page/blog.html'

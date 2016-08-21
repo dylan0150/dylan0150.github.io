@@ -18,11 +18,6 @@ app.config(function ($routeProvider) {
       controller: 'AboutmeController',
       templateUrl: 'page/aboutme.html'
     })
-    .otherwise(
-      {
-        redirectTo: '/'
-      }
-    )
 });
 
 app.controller('Controller', function($scope, $route, $routeParams, $location) {

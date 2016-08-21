@@ -6,10 +6,6 @@ app.config(function ($routeProvider) {
       controller: 'Controller',
       templateUrl: 'page/main.html'
     })
-    .when('/main', {
-      controller: 'MainController',
-      templateUrl: 'page/main.html'
-    })
     .when('/blog', {
       controller: 'BlogController',
       templateUrl: 'page/blog.html'
@@ -22,17 +18,17 @@ app.config(function ($routeProvider) {
       controller: 'AboutmeController',
       templateUrl: 'page/aboutme.html'
     })
+    .otherwise(
+      {
+        redirectTo: '/'
+      }
+    )
 });
 
 app.controller('Controller', function($scope, $route, $routeParams, $location) {
   $scope.$route = $route;
   $scope.$location = $location;
   $scope.$routeParams = $routeParams;
-})
-
-app.controller('MainController', function($scope, $routeParams) {
-  $scope.name = 'MainController';
-  $scope.params = $routeParams;
 })
 
 app.controller('BlogController', function($scope, $routeParams) {

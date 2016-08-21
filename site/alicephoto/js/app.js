@@ -10,15 +10,15 @@ app.config(function ($routeProvider) {
       controller: 'MainController',
       templateUrl: 'page/main.html'
     })
-    .when('/myblog', {
+    .when('/blog', {
       controller: 'BlogController',
       templateUrl: 'page/blog.html'
     })
-    .when('/myart', {
+    .when('/photo', {
       controller: 'PhotoController',
       templateUrl: 'page/photography.html'
     })
-    .when('/aboutme', {
+    .when('/about', {
       controller: 'AboutmeController',
       templateUrl: 'page/aboutme.html'
     })

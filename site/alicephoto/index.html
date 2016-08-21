@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Alice Birt Photography</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" charset="utf-8">
+
+    <!-- JS-Library -->
+    <script type="text/javascript" src="library/angular.js"></script>
+    <script type="text/javascript" src="library/angular-route.js"></script>
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <!-- CSS-Library -->
+  </head>
+  <body ng-controller="MainController">
+
+    <div class="header">
+      <a href="index.html"><h1>Alice Birt Photography</h1></a>
+    </div>
+
+    <div class="navbar">
+      <ul>
+        <li><a href="#/about">About Me</a></li>
+        <li><a href="#/photo">My Photography</a></li>
+        <li><a href="#/blog">My Blog</a></li>
+      </ul>
+    </div>
+
+    <div ng-view></div>
+
+    <div class="footer">
+      <ul>
+        <li><a href="">Facebook</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

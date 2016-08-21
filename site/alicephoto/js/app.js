@@ -3,7 +3,7 @@ var app = angular.module("myApp", ['ngRoute']);
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
-      controller: 'MainController',
+      controller: 'Controller',
       templateUrl: 'page/main.html'
     })
     .when('/main', {
@@ -24,10 +24,15 @@ app.config(function ($routeProvider) {
     })
 });
 
-app.controller('MainController', function($scope, $route, $routeParams, $location) {
+app.controller('Controller', function($scope, $route, $routeParams, $location) {
   $scope.$route = $route;
   $scope.$location = $location;
   $scope.$routeParams = $routeParams;
+})
+
+app.controller('MainController', function($scope, $routeParams) {
+  $scope.name = 'MainController';
+  $scope.params = $routeParams;
 })
 
 app.controller('BlogController', function($scope, $routeParams) {

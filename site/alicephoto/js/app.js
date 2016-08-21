@@ -3,24 +3,28 @@ var app = angular.module("myApp", ['ngRoute']);
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
-      controller: 'Controller',
+      controller: 'MainController',
       templateUrl: 'page/main.html'
     })
-    .when('/blog', {
+    .when('/main', {
+      controller: 'MainController',
+      templateUrl: 'page/main.html'
+    })
+    .when('/myblog', {
       controller: 'BlogController',
       templateUrl: 'page/blog.html'
     })
-    .when('/photo', {
+    .when('/myart', {
       controller: 'PhotoController',
       templateUrl: 'page/photography.html'
     })
-    .when('/about', {
+    .when('/aboutme', {
       controller: 'AboutmeController',
       templateUrl: 'page/aboutme.html'
     })
 });
 
-app.controller('Controller', function($scope, $route, $routeParams, $location) {
+app.controller('MainController', function($scope, $route, $routeParams, $location) {
   $scope.$route = $route;
   $scope.$location = $location;
   $scope.$routeParams = $routeParams;

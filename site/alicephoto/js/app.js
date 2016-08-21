@@ -2,6 +2,10 @@ var app = angular.module("myApp", ['ngRoute']);
 
 app.config(function ($routeProvider) {
   $routeProvider
+    .when('/', {
+      controller: 'MainController',
+      templateUrl: 'page/main.html'
+    })
     .when('/blog', {
       controller: 'BlogController',
       templateUrl: 'page/blog.html'

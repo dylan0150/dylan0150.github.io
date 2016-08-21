@@ -14,27 +14,35 @@
     <script type="text/javascript" src="js/app.js"></script>
 
     <!-- CSS-Library -->
+    <link rel="stylesheet" type="text/css" href="library/bootstrap.css">
   </head>
   <body ng-controller="MainController">
 
     <div class="header">
-      <a href="index.html"><h1>Alice Birt Photography</h1></a>
-    </div>
-
-    <div class="navbar">
-      <ul>
-        <li><a href="#/about">About Me</a></li>
-        <li><a href="#/photo">My Photography</a></li>
-        <li><a href="#/blog">My Blog</a></li>
-      </ul>
+    	<header class="container">
+    		<div class="row">
+    			<a href="index.html"><h1 class="col-sm-4">Alziebot Photography</h1></a>
+    				<nav class="col-sm-8 text-right">
+    					<p><a id="About me" href="#/aboutme">About Me</a></p>
+    					<p><a id="About me" href="#/myart">My Art</a></p>
+    					<p><a id="About me" href="#/myblog">My Blog</a></p>
+    				</nav>
+    		</div>
+    		<i><h4>You smile, I click!</h4></i>
+    	</header>
     </div>
 
     <div ng-view></div>
 
     <div class="footer">
-      <ul>
-        <li><a href="">Facebook</a></li>
-      </ul>
+    	<footer class="container">
+    	<div class="row">
+    		<ul style="list-style-type: none;">
+    			<li class="col-sm-1">
+    				<a href= "https://www.facebook.com/AlziebotPhotography"><img width="50px" height="50px" src="image/facebook.jpg"/></a>
+    			</li>
+    		</ul>
+    	</div>
     </div>
   </body>
 </html>

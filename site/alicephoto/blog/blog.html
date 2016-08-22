@@ -1,4 +1,4 @@
-<div class="container" ng-controller="BlogController">
+<div class="container" ng-controller="BlogController" ng-repeat="entry in entrys[$routeParams.id]">
 	<div class="row">
 		<figure class="col-sm-2">
 			<img width="150px" height="150px" src="image/blog/face.jpg"/>
@@ -9,26 +9,4 @@
 		</div>
 		<p>{{ entry.date }}<p>
 	</div>
-</div>
-
-<div ng-controller="BlogController" ng-repeat="section in entry.content">
-<div id="body" class="container">
-	<div class="row">
-	<h4>{{ section.heading }}</h4>
-  <p>{{ section.content }}</p>
-	</div>
-</div>
-<div ng-controller="BlogController" ng-repeat="photo in section.photo">
-<div id="image" class="container">
-	<div class="row">
-	<a href="{{ photo.url }}"><img ng-src="{{ photo.url }}"/></a>
-	</div>
-</div>
-<div id="caption" class="container">
-	<div class="row">
-	<p>{{ photo.date }}  {{ photo.location }}  {{ photo.comment }}</p>
-	</div>
-</div>
-</div>
-
 </div>

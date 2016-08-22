@@ -8,7 +8,7 @@ app.controller('BlogController', function($scope, $routeParams) {
       title: "The Start of a Long Summer!",
       intro: "My big summer project!",
       date: "14/05/2016",
-      url: "#/blog/:id",
+      url: "#/blog/1",
       tagphoto: "image/blog/1.jpg",
       text: [
         {

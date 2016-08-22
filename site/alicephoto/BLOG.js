@@ -2,8 +2,9 @@ app.controller('BlogController', function($scope, $routeParams) {
   $scope.name = 'BlogController';
   $scope.params = $routeParams;
   $scope.entrys = [
+
     {
-      id: 1
+      id: 1,
       title: "The Start of a Long Summer!",
       intro: "My big summer project!",
       date: "14/05/2016",
@@ -44,6 +45,7 @@ app.controller('BlogController', function($scope, $routeParams) {
         },
       ],
     },
+
   ]
 })
 

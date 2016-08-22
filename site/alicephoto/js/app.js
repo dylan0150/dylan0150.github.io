@@ -28,13 +28,10 @@ app.config(function ($routeProvider) {
     })
 });
 
-app.controller('MainController', function($scope, $route, $routeParams, $location, $anchorScroll) {
+app.controller('MainController', function($scope, $route, $routeParams, $location) {
   $scope.$route = $route;
   $scope.$location = $location;
   $scope.$routeParams = $routeParams;
-  $scope.gotoTop = function() {
-    $location.hash('top');
-    $anchorScroll();
 })
 
 app.controller('AboutmeController', function($scope, $routeParams) {

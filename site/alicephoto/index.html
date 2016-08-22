@@ -19,15 +19,6 @@
   </head>
   <body ng-controller="MainController">
 
-    <div class="header">
-    	<header class="container">
-    		<div class="row">
-    			<a href="#/main"><h1 class="col-sm-4">Alziebot Photography</h1></a>
-    		</div>
-    		<i><h4>You smile, I click!</h4></i>
-    	</header>
-    </div>
-
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -47,9 +38,9 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="/blog">My Blog</a></li>
+                <li><a href="/photo">My Photography</a></li>
+                <li><a href="/about">About me</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
                 <li><a href="#">Separated link</a></li>
@@ -65,6 +56,15 @@
         </div>
       </div>
     </nav>
+
+    <div class="header">
+    	<header class="container">
+    		<div class="row">
+    			<a href="#/main"><h1 class="col-sm-4">Alziebot Photography</h1></a>
+    		</div>
+    		<i><h4>You smile, I click!</h4></i>
+    	</header>
+    </div>
 
     <div ng-view></div>
 

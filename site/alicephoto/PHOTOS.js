@@ -3,39 +3,39 @@ app.controller('PhotoController', function($scope, $routeParams) {
   $scope.params = $routeParams;
   $scope.photos = [
     {
-      location: "[spunge] Gig",
+      location: "",
       url: "image/myart/1.jpg",
-      comment: "",
+      comment: "[spunge] Gig",
       date: "05-06-16",
     },
     {
-      location: "Sound of Dream Gig",
+      location: "",
       url: "image/myart/2.jpg",
-      comment: "",
+      comment: "Sound of Dream Gig",
       date: "16-05-16",
     },
     {
-      location: "Andrew Warner Gig",
+      location: "",
       url: "image/myart/3.jpg",
-      comment: "",
+      comment: "Andrew Warner Gig",
       date: "19-05-16",
     },
     {
-      location: "Chris Tavener Gig",
+      location: "",
       url: "image/myart/4.jpg",
-      comment: "",
+      comment: "Chris Tavener Gig",
       date: "19-05-16",
     },
     {
-      location: "Dog Coffee Gig",
+      location: "",
       url: "image/myart/5.jpg",
-      comment: "",
+      comment: "Dog Coffee Gig",
       date: "03-04-16",
     },
     {
-      location: "Sound of Dream Gig",
+      location: "",
       url: "image/myart/6.jpg",
-      comment: "",
+      comment: "Sound of Dream Gig",
       date: "16-05-16",
     },
     {

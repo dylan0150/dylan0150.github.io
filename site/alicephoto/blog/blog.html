@@ -10,3 +10,8 @@
 		<p>{{ entrys[params.id].date }}<p>
 	</div>
 </div>
+
+<div class="container" ng-controller="BlogController" ng-repeat="item in entrys[params.id].content">
+	<p>{{ item.heading }}</p>
+	<p>{{ item.text }}</p>
+</div>

@@ -8,6 +8,20 @@ app.controller('BlogController', function($scope, $routeParams) {
       intro: "two",
       date: "three",
       tagphoto: "",
+      content: [
+        {
+          heading: "heading",
+          text: "text",
+          photos: [
+            {
+              location: "location",
+              url: "",
+              comment: "comment",
+              date: "date",
+            },
+          ],
+        },
+      ],
     },
     {
       title: "one",

@@ -3,10 +3,10 @@
 		<figure class="col-sm-2">
 			<img width="150px" height="150px" src="image/blog/face.jpg"/>
 		</figure>
-		<div class="col-sm-8" ng-controller="BlogController['$routeParams.id']">
-			<h2>{{ entry.title }}</h2>
-			<p>{{ entry.intro }}</p>
+		<div class="col-sm-8" ng-controller="BlogController" ng-repeat="currententry in currententrys">
+			<h2>{{ currententry.title }}</h2>
+			<p>{{ currententry.intro }}</p>
 		</div>
-		<p>{{ entry.date }}<p>
+		<p>{{ currententry.date }}<p>
 	</div>
 </div>

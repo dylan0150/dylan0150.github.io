@@ -8,8 +8,8 @@ app.controller('BlogController', function($scope, $routeParams) {
       intro: "",
       date: "",
       tagphoto: "",
-
     },
 
   ];
+  $scope.currententrys = $scope.entrys[$routeParams.id];
 })

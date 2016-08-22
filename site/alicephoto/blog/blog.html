@@ -4,9 +4,9 @@
 			<img width="150px" height="150px" src="image/blog/face.jpg"/>
 		</figure>
 		<div class="col-sm-8" ng-controller="BlogController" ng-repeat="entry in entrys">
-			<h2>{{ currententry.title }}</h2>
-			<p>{{ currententry.intro }}</p>
+			<h2>{{ entry.title }}</h2>
+			<p>{{ entry.intro }}</p>
 		</div>
-		<p>{{ currententry.date }}<p>
+		<p>{{ entry.date }}<p>
 	</div>
 </div>

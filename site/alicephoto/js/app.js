@@ -24,7 +24,7 @@ app.config(function ($routeProvider) {
     })
     .when('/blog/:id', {
       controller: 'BlogController',
-      templateUrl: 'blog/:id'
+      templateUrl: 'blog/blog.html'
     })
 });
 

@@ -30,11 +30,6 @@ app.controller('MainController', function($scope, $route, $routeParams, $locatio
   $scope.$routeParams = $routeParams;
 })
 
-app.controller('BlogController', function($scope, $routeParams) {
-  $scope.name = 'BlogController';
-  $scope.params = $routeParams;
-})
-
 app.controller('AboutmeController', function($scope, $routeParams) {
   $scope.name = 'AboutmeController';
   $scope.params = $routeParams;

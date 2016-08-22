@@ -22,6 +22,10 @@ app.config(function ($routeProvider) {
       controller: 'AboutmeController',
       templateUrl: 'page/aboutme.html'
     })
+    .when('/blog/:id', {
+      controller: 'BlogController',
+      templateUrl: 'blog/:id'
+    })
 });
 
 app.controller('MainController', function($scope, $route, $routeParams, $location) {

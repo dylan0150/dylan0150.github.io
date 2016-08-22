@@ -12,9 +12,11 @@
 </div>
 
 <div class="container" ng-controller="BlogController" ng-repeat="item in entrys[params.id].content">
-	<p>{{ item.heading }}</p>
-	<p>{{ item.text }}</p>
-	<div ng-repeat="photo in item.photos">
+	<div class="row">
+		<p>{{ item.heading }}</p>
+		<p>{{ item.text }}</p>
+	</div>
+	<div ng-repeat="photo in item.photos" class="row">
 		<a href="{{ photo.url }}"><img ng-src="{{ photo.url }}"></a>
 		<p>{{ photo.location }} {{ photo.date }} {{ photo.comment }}</p>
 	</div>

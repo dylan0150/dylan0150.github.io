@@ -6,21 +6,3 @@ body {
 #title {
   color: red;
 }
-
-.tooltip {
-  position: absolute;
-  color: #fff;
-  background: #000;
-  border-radius: 3px;
-  padding: 10px 20px;
-  display: inline-block;
-}
-
-.tooltip.ng-enter {
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-.tooltip.ng-enter-active {
-  opacity: 1;
-}

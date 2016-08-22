@@ -15,7 +15,7 @@
 	<p>{{ item.heading }}</p>
 	<p>{{ item.text }}</p>
 	<div ng-repeat="photo in item.photos">
-		<a href="{{ photo.url }}"><img height="500px" ng-src="{{ photo.url }}"></a>
+		<a href="{{ photo.url }}"><img ng-src="{{ photo.url }}"></a>
 		<p>{{ photo.location }} {{ photo.date }} {{ photo.comment }}</p>
 	</div>
 </div>

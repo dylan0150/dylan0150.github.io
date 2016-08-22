@@ -1,3 +1,1 @@
-var reload = function(){
-  location.reload();
-};
+location.reload();

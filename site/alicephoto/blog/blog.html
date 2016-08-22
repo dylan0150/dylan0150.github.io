@@ -4,9 +4,14 @@
 			<img width="150px" height="150px" src="image/blog/face.jpg"/>
 		</figure>
 		<div class="col-sm-8" ng-controller="BlogController">
-			<h2>{{ entry.title }}</h2>
-			<p>{{ entry.intro }}</p>
+			<pre>$location.path() = {{$location.path()}}</pre>
+  <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+  <pre>$route.current.params = {{$route.current.params}}</pre>
+  <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+  <pre>$routeParams = {{$routeParams}}</pre>
+			<h2>{{}}</h2>
+			<p>{{}}</p>
 		</div>
-		<p>{{ entry.date }}<p>
+		<p>{{}}<p>
 	</div>
 </div>

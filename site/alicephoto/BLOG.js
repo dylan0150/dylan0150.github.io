@@ -9,7 +9,6 @@ app.controller('BlogController', function($scope, $routeParams) {
       date: "14/05/2016",
       tagphoto: "image/blog/1.jpg",
       content: [
-
         {
           heading: "",
           content: "So far I've got over 20 eager to help me out! Throughout my journey I will be keeping this blog, a vlog on YouTube and putting all the photos on my Facebook page!",
@@ -22,7 +21,6 @@ app.controller('BlogController', function($scope, $routeParams) {
             },
           ]
         },
-
         {
           heading: "",
           content: "So far I've got over 20 eager to help me out! Throughout my journey I will be keeping this blog, a vlog on YouTube and putting all the photos on my Facebook page!",
@@ -35,7 +33,6 @@ app.controller('BlogController', function($scope, $routeParams) {
             },
           ]
         },
-
         {
           heading: "",
           content: "So far I've got over 20 eager to help me out! Throughout my journey I will be keeping this blog, a vlog on YouTube and putting all the photos on my Facebook page!",
@@ -48,8 +45,8 @@ app.controller('BlogController', function($scope, $routeParams) {
             },
           ]
         },
-
-      ]
+      ],
     },
+
   ];
 })

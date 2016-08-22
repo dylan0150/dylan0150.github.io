@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row">
+		<figure class="col-sm-2">
+			<img width="150px" height="150px" src="image/blog/face.jpg"/>
+		</figure>
+		<div class="col-sm-8">
+			<h2>{{ title }}</h2>
+			<p>{{ intro }}</p>
+		</div>
+		<p>{{ date }}<p>
+	</div>
+</div>
+
+<div ng-controller="BlogController" ng-repeat="entry in entrys">
+<div id="body" class="container">
+	<div class="row">
+	<h4>{{ entry.text.heading }}</h4>
+  <p>{{ entry.text.content }}</p>
+	</div>
+</div>
+<div id="image" class="container">
+	<div class="row">
+	<a href="{{ entry.photo.url }}"><img ng-src="{{ entry.photo.url }}"/></a>
+	</div>
+</div>
+<div id="caption" class="container">
+	<div class="row">
+	<p>{{ entry.photo.date }}  {{ entry.photo.location }}  {{ entry.photo.comment }}</p>
+	</div>
+</div>
+</div>

@@ -4,14 +4,14 @@
 			<img width="150px" height="150px" src="image/blog/face.jpg"/>
 		</figure>
 		<div class="col-sm-8">
-			<h2>{{ title }}</h2>
-			<p>{{ intro }}</p>
+			<h2>{{ entry.title }}</h2>
+			<p>{{ entry.intro }}</p>
 		</div>
-		<p>{{ date }}<p>
+		<p>{{ entry.date }}<p>
 	</div>
 </div>
 
-<div ng-controller="BlogController" ng-repeat="section in content">
+<div ng-controller="BlogController" ng-repeat="section in entry.content">
 <div id="body" class="container">
 	<div class="row">
 	<h4>{{ section.heading }}</h4>

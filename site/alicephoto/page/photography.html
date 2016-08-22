@@ -9,80 +9,9 @@
 	</section>
 </div>
 
-	<section class="container">
-	<div id="image" class="row">
-		<figure class="col-sm-4">
-			<p>[spunge] Gig 05-05-16</p>
-			<a href="image/myart/1.jpg"><img width="350px" src="image/myart/1.jpg"/></a>
-		</figure>
-		<figure class="col-sm-4">
-			<p>Sound of Dream Gig 16-05-16</p>
-			<a href="image/myart/2.jpg"><img width="350px" src="image/myart/2.jpg"/></a>
-		</figure>
-		<figure class="col-sm-4">
-			<p>Andrew Warner Gig 19-05-16</p>
-			<a href="image/myart/3.jpg"><img width="350px" src="image/myart/3.jpg"/></a>
-		</figure>
+<div class="container" ng-controller="PhotoController">
+	<div ng-repeat="photo in photos">
+		<img ng-src="{{ photo.url }}">
+		<p>{{  photo.location  }} {{  photo.date  }} {{  photo.comment  }}</p>
 	</div>
-	<div id="image" class="row">
-		<figure class="col-sm-4">
-			<p>Chris Tavener Gig 19-05-16</p>
-			<a href="image/myart/4.jpg"><img width="350px" src="image/myart/4.jpg"/></a>
-		</figure>
-		<figure class="col-sm-4">
-			<p>Dog Coffee Gig 03-04-16</p>
-			<a href="image/myart/5.jpg"><img width="350px" src="image/myart/5.jpg"/></a>
-		</figure>
-		<figure class="col-sm-4">
-			<p>Sound of Dream Gig 16-05-16</p>
-			<a href="image/myart/6.jpg"><img width="350px" src="image/myart/6.jpg"/></a>
-		</figure>
-	</div>
-	<div id="image" class="row">
-		<figure class="col-sm-4">
-			<p>James Skeet 16-05-16</p>
-			<a href="image/myart/7.jpg"><img width="350px" src="image/myart/7.jpg"/></a>
-		</figure>
-		<figure class="col-sm-4">
-			<p>Ethan Skimboarding</p>
-			<a href="image/myart/8.jpg"><img width="350px" src="image/myart/8.jpg"/></a>
-		</figure>
-		<figure class="col-sm-4">
-			<p>Woolacombe Beach</p>
-			<a href="image/myart/9.jpg"><img width="350px" src="image/myart/9.jpg"/></a>
-		</figure>
-	</div>
-	<div id="image" class="row">
-		<figure class="col-sm-4">
-			<p>Erin</p>
-			<a href="image/myart/10.jpg"><img width="350px" src="image/myart/10.jpg"/></a>
-		</figure>
-		<figure class="col-sm-4">
-			<p>Ethan Skimboarding</p>
-			<a href="image/myart/11.jpg"><img width="350px" src="image/myart/11.jpg"/></a>
-		</figure>
-		<figure class="col-sm-4">
-			<p>Ethan</p>
-			<a href="image/myart/12.jpg"><img width="350px" src="image/myart/12.jpg"/></a>
-		</figure>
-	</div>
-	<div id="image" class="row">
-		<figure class="col-sm-4">
-			<p>Frank Turner Gig 23-11-15</p>
-			<a href="image/myart/13.jpg"><img width="350px" src="image/myart/13.jpg"/></a>
-		</figure>
-		<figure class="col-sm-4">
-			<p>Charlotte</p>
-			<a href="image/myart/15.jpg"><img width="350px" src="image/myart/15.jpg"/></a>
-		</figure>
-		<figure class="col-sm-4">
-			<p>Chris</p>
-			<a href="image/myart/16.jpg"><img width="350px" src="image/myart/16.jpg"/></a>
-		</figure>
-	</div>
-	<div id="image" class="row">
-		<figure class="col-sm-4">
-			<p>Hidden Cabins Gig 03-04-16</p>
-			<a href="image/myart/17.jpg"><img width="350px" src="image/myart/17.jpg"/></a>
-		</figure>
-	</div>
+</div>

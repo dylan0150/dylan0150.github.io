@@ -35,11 +35,6 @@ app.controller('BlogController', function($scope, $routeParams) {
   $scope.params = $routeParams;
 })
 
-app.controller('PhotoController', function($scope, $routeParams) {
-  $scope.name = 'PhotoController';
-  $scope.params = $routeParams;
-})
-
 app.controller('AboutmeController', function($scope, $routeParams) {
   $scope.name = 'AboutmeController';
   $scope.params = $routeParams;

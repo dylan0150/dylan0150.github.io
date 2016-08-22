@@ -4,9 +4,9 @@ app.controller('BlogController', function($scope, $routeParams) {
   $scope.entrys = [
 
     {
-      title: "",
-      intro: "",
-      date: "",
+      title: "one",
+      intro: "two",
+      date: "three",
       tagphoto: "",
     },
 

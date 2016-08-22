@@ -9,9 +9,23 @@
 	</section>
 </div>
 
-<div class="container" ng-controller="PhotoController">
-	<div ng-repeat="photo in photos">
-		<img ng-src="{{ photo.url }}">
-		<p>{{  photo.location  }} {{  photo.date  }} {{  photo.comment  }}</p>
+	<div class="container" ng-controller="PhotoController">
+		<div class="col-sm-4" ng-repeat="photo in photoscol1">
+			<img width="350px" ng-src="{{ photo.url }}">
+			<p>{{  photo.location  }} {{  photo.date  }} {{  photo.comment  }}</p>
+		</div>
 	</div>
-</div>
+
+	<div class="container" ng-controller="PhotoController">
+		<div class="col-sm-4" ng-repeat="photo in photoscol2">
+			<img width="350px" ng-src="{{ photo.url }}">
+			<p>{{  photo.location  }} {{  photo.date  }} {{  photo.comment  }}</p>
+		</div>
+	</div>
+
+	<div class="container" ng-controller="PhotoController">
+		<div class="col-sm-4" ng-repeat="photo in photoscol3">
+			<img width="350px" ng-src="{{ photo.url }}">
+			<p>{{  photo.location  }} {{  photo.date  }} {{  photo.comment  }}</p>
+		</div>
+	</div>

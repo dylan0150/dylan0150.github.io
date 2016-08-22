@@ -1,12 +1,5 @@
 body {
   padding-top: 150px;
-}
-
-#title {
-  color: red;
-}
-
-#blog {
   display: inline;
   display: flex;
   	flex-wrap: wrap;
@@ -15,6 +8,10 @@ body {
   align-content: center;
 }
 
+#title {
+  color: red;
+}
+
 .row {
-  padding: 15px;
+  padding: 25px;
 }

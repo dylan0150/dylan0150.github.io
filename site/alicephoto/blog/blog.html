@@ -11,7 +11,7 @@
 	</div>
 </div>
 
-<div class="container" ng-controller="BlogController" ng-repeat="item in entrys[params.id].content">
+<div class="container" id="blog" ng-controller="BlogController" ng-repeat="item in entrys[params.id].content">
 	<div class="row">
 		<p>{{ item.heading }}</p>
 		<p>{{ item.text }}</p>

@@ -7,7 +7,7 @@ app.controller('BlogController', function($scope, $routeParams) {
       title: "The Start Of A Long Summer!",
       intro: "My big summer project!",
       date: "14/05/2016",
-      tagphoto: "image/blog/face.jpg",
+      tagphoto: "image/blog/1.jpg",
       content: [
         {
           heading: "",
@@ -52,7 +52,7 @@ app.controller('BlogController', function($scope, $routeParams) {
       title: "My Summer Project",
       intro: "What am I doing?",
       date: "10/07/2016",
-      tagphoto: "image/blog/face.jpg",
+      tagphoto: "image/blog/2.jpg",
       content: [
         {
           heading: "",
@@ -101,6 +101,55 @@ app.controller('BlogController', function($scope, $routeParams) {
       ],
     },
 
+    {
+      title: "March Gigs!",
+      intro: "Here's a little info about the gigs i went to throughout March!",
+      date: "01/04/2016",
+      tagphoto: "image/blog/marchdogcoffee1.jpg",
+      content: [
+        {
+          heading: "",
+          text: "Sadly, I only went to 3 gigs in March due to exam prep with uni! I saw the awesome Dog Coffee twice and then one of my favourite bands Rusty Shackle!",
+          photos: [
+            {
+              location: "The Ram & Shackle",
+              url: "image/blog/marchdogcoffee1.jpg",
+              comment: "Dog Coffee",
+              date: "//",
+            },
+          ],
+        },
+        {
+          heading: "",
+          text: "This gig was the start of my photography journey with Mr Dog Coffee! I've now lost count at how many times i've seen him play! Here's him playing at The Ram & Shackle! It was an...interesting gig for sure!",
+          photos: [
+            {
+              location: "Gullivers",
+              url: "image/blog/marchrustyshackle.jpg",
+              comment: "Rusty Shackle",
+              date: "//",
+            },
+          ],
+        },
+        {
+          heading: "",
+          text: "I got introduced to Rusty Shackle at Beautiful Days Festival and I fell in love! I've been listening to them for several years now and they finally played in Manchester so i could see them! I also got the huge pleasure of photographing them!",
+          photos: [
+            {
+              location: "The Lightroom",
+              url: "image/blog/marchdogcoffee2.jpg",
+              comment: "Dog Coffee",
+              date: "//",
+            },
+          ],
+        },
+        {
+          heading: "",
+          text: "This was my second time photographing for Dog Coffee! He played at The Lightroom which i have learnt is an awesome venue!",
+        },
+      ],
+    },
+
   ];
 })
 
@@ -111,6 +160,7 @@ app.controller('BlogController', function($scope, $routeParams) {
   date: "//",
   tagphoto: "image/blog/",
   content: [
+
     {
       heading: "",
       text: "",
@@ -123,6 +173,23 @@ app.controller('BlogController', function($scope, $routeParams) {
         },
       ],
     },
+
+    {
+      photos: [
+        {
+          location: "",
+          url: "image/blog/",
+          comment: "",
+          date: "//",
+        },
+      ],
+    },
+
+    {
+      heading: "",
+      text: "",
+    },
+
   ],
 },
 END OF ENTRY TEMPLATE*/

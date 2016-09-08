@@ -13,7 +13,7 @@ newPlayer = function(){
   var temploop = true;
   while(temploop === true){
     var username = prompt("What is your name?");
-    if(confirm("I got "+username+", is that right?") === true){
+    if(confirmstring(username) === true){
       temploop = false;
       alert("Nice to meet you "+username+".");
       Player = new player(username);
@@ -21,5 +21,7 @@ newPlayer = function(){
     }
   }
 }
+
+confirmstring = function(variable){confirm("I got "+variable+", is that right?")};
 
 newPlayer();

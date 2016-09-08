@@ -1,7 +1,4 @@
-var app = angular.module("gameApp", ['ngRoute','ngAnimate',
-    //DIRECTIVES//
-  'app.directive.card',
-]);
+var app = angular.module("gameApp", ['ngRoute','ngAnimate','app.directive']);
 
 app.config(function ($routeProvider) {
   $routeProvider

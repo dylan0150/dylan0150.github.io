@@ -24,11 +24,4 @@ newPlayer = function(){
 
 newPlayer();
 
-confirmstring = function(variable){
-  if(confirm("I got "+variable+", is that right?") === true){
-    return true;
-  }
-  else{
-    return false;
-  }
-}
+confirmstring = function(variable){return confirm("I got "+variable+", is that right?"};

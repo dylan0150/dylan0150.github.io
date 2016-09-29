@@ -10,6 +10,7 @@
     <td>Name</td>
     <td>No. of Games</td>
     <td>Join Date</td>
+    <td>Edit Member</td>
   </thead>
   <?php ?>
 </table>

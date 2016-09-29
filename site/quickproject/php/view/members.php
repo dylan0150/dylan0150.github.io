@@ -10,7 +10,7 @@
     <td>Name</td>
     <td>No. of Games</td>
     <td>Join Date</td>
-    <td><button>Edit Member</button></td>
+    <td>Edit Member</td>
   </thead>
   <?php
     for ($i=0; $i < ; $i++) {

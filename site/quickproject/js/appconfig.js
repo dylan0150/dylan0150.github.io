@@ -10,9 +10,9 @@ app.config(function ($routeProvider) {
       controller: 'MainController',
       templateUrl: 'php/view/main.html'
     })
-    .when('/members/', {
+    .when('/members', {
       controller: 'MembersController',
-      templateUrl: 'hphpview/members.php'
+      templateUrl: 'php/view/members.php'
     })
     .when('/members/:id', {
       controller: 'MembersController',

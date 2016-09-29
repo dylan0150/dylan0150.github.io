@@ -4,22 +4,22 @@ app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
       controller: 'MainController',
-      templateUrl: 'html/view/main.html'
+      templateUrl: 'php/view/main.php'
     })
     .when('/main', {
       controller: 'MainController',
-      templateUrl: 'html/view/main.html'
+      templateUrl: 'php/view/main.php'
     })
     .when('/members', {
       controller: 'MembersController',
-      templateUrl: 'html/view/members.html'
+      templateUrl: 'php/view/members.php'
     })
     .when('/members/:id', {
       controller: 'MembersController',
-      templateUrl: 'html/view/members.html'
+      templateUrl: 'php/view/members.php'
     })
     .when('/leaderboard', {
       controller: 'LeaderboardController',
-      templateUrl: 'html/view/leaderboard.html'
+      templateUrl: 'php/view/leaderboard.php'
     })
 });

@@ -4,11 +4,11 @@ app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
       controller: 'MainController',
-      templateUrl: 'php/view/main.html'
+      templateUrl: 'php/view/main.php'
     })
     .when('/main', {
       controller: 'MainController',
-      templateUrl: 'php/view/main.html'
+      templateUrl: 'php/view/main.php'
     })
     .when('/members', {
       controller: 'MembersController',

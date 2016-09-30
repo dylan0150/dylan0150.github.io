@@ -2,8 +2,7 @@ app.controller('MembersController', function($scope, $routeParams) {
   $scope.name = 'MembersController';
   $scope.params = $routeParams;
   $scope.editmember = function(member){
-    var id = "#/members/"+member.$index;
-    window.document.location = id;
+    window.location = "#/members/:id"
   }
   $scope.members = [
     {

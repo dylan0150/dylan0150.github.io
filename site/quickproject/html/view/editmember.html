@@ -28,6 +28,7 @@
         </th>
         <tbody ng-repeat="game in members[params.id].games | limitTo:10">
           <tr>
+            <td>{{ $index }}</td>
             <td>{{ game.opponent }}</td>
             <td>{{ checkwin(game); }}</td>
             <td>{{ game.score }}</td>

@@ -15,8 +15,8 @@ app.config(function ($routeProvider) {
       templateUrl: 'php/view/members.php'
     })
     .when('/members/:id', {
-      controller: 'MembersController',
-      templateUrl: 'php/view/members.php'
+      controller: 'EditMemberController',
+      templateUrl: 'php/view/editmember.php'
     })
     .when('/leaderboard', {
       controller: 'LeaderboardController',

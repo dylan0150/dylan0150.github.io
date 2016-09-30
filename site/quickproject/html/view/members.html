@@ -5,7 +5,7 @@
     <td><b>Join Date</b></td>
   </th>
   <tbody ng-repeat="member in members">
-    <tr ng-click="editmember(member);">
+    <tr ng-click="editmember({{$index}});">
       <td>{{ $index }}</td>
       <td>{{ member.name }}</td>
       <td>{{ member.games }}</td>

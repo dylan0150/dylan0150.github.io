@@ -17,6 +17,7 @@ app.controller('MembersController', function($scope, $routeParams) {
       ],
     }
   ];
+
   $scope.gethighscore = function(val,member){
     var highscore = 0;
     for (var i = 0; i < member.games.length; i++) {
@@ -38,24 +39,27 @@ app.controller('MembersController', function($scope, $routeParams) {
       break;
     };
   };
+
   $scope.getwins = function(member){
     var wins = 0;
     for (var i = 0; i < member.games.length; i++) {
-      if (member.games[i].win == true) {
+      if (member.games[i].win) {
         wins++;
       }
     }
     return wins;
   };
+
   $scope.getlosses = function(member){
     var losses = 0;
     for (var i = 0; i < member.games.length; i++) {
-      if (member.games[i].win == false) {
+      if (!member.games[i].win) {
         losses++;
       }
     }
     return losses;
   };
+
   $scope.getaveragescore = function(member){
     var totalscore = 0;
     for (var i = 0; i < member.games.length; i++) {

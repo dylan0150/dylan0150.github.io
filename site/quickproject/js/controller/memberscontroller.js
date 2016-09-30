@@ -41,14 +41,29 @@ app.controller('MembersController', function($scope, $routeParams) {
       break;
     };
   };
-})
-
-
-
-getaveragescore = function(){
-  var totalscore = 0;
-  for (var i = 0; i < games.length; i++) {
-    totalscore += games[i];
+  $scope.getaveragescore = function(member){
+    var totalscore = 0;
+    for (var i = 0; i < mamber.games.length; i++) {
+      totalscore += mamber.games[i];
+    }
+    return Math.floor(totalscore / games[i].length);
+  };
+  $scope.getwins = function(member){
+    var wins = 0
+    for (var i = 0; i < member.games.length; i++) {
+      if (member.games[i].win === true) {
+        wins++;
+      }
+    }
+    return wins;
+  };
+  $scope.getlosses = function(member){
+    var losses = 0
+    for (var i = 0; i < member.games.length; i++) {
+      if (member.games[i].win === false) {
+        losses++;
+      }
+    }
+    return losses;
   }
-  return Math.floor(totalscore / games[i].length);
-};
+})

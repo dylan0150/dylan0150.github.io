@@ -9,10 +9,10 @@ app.controller('MembersController', function($scope, $routeParams) {
       age: 24,
       games: [
         {
-          score: "",
-          win: "",
-          date: "",
-          opponent: "",
+          score: "15",
+          win: true,
+          date: "01/01/2016",
+          opponent: "Jane Doe",
         },
       ],
       gethighscore: function(val){

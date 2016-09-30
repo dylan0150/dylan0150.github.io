@@ -4,17 +4,23 @@
 <p>space</p>
 <p>space</p>
 
-<table>
-  <thead>
+<table id="memberstable">
+  <th>
     <td>ID</td>
     <td>Name</td>
     <td>No. of Games</td>
     <td>Join Date</td>
-    <td>Edit Member</td>
-  </thead>
-  <?php
-    for ($i=0; $i < ; $i++) {
-
-    }
-  ?>
+  </th>
+  <tr>
+    <td>1</td>
+    <td>John</td>
+    <td>26</td>
+    <td>05/07/1995</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Alex</td>
+    <td>126</td>
+    <td>04/11/2001</td>
+  </tr>
 </table>

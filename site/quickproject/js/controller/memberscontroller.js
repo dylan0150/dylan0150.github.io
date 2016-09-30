@@ -20,12 +20,10 @@ app.controller('MembersController', function($scope, $routeParams) {
   $scope.gethighscore = function(val,member){
     var highscore = 0;
     for (var i = 0; i < member.games.length; i++) {
-      if (member.games[i].win) {
-        if (member.games[i].score > highscore) {
-          highscore = member.games[i].score;
-          var when = member.games[i].date;
-          var who = member.games[i].opponent;
-        }
+      if (member.games[i].score > highscore) {
+        highscore = member.games[i].score;
+        var when = member.games[i].date;
+        var who = member.games[i].opponent;
       }
     };
     console.log(highscore);
@@ -41,30 +39,29 @@ app.controller('MembersController', function($scope, $routeParams) {
       break;
     };
   };
-  $scope.getaveragescore = function(member){
-    var totalscore = 0;
-    for (var i = 0; i < member.games.length; i++) {
-      totalscore = totalscore + member.games[i].score;
-    };
-    var averagescore = totalscore / games[i].length;
-    return averagescore;
-  };
   $scope.getwins = function(member){
-    var wins = 0
+    var wins = 0;
     for (var i = 0; i < member.games.length; i++) {
-      if (member.games[i].win === true) {
+      if (member.games[i].win == true) {
         wins++;
       }
     }
     return wins;
   };
   $scope.getlosses = function(member){
-    var losses = 0
+    var losses = 0;
     for (var i = 0; i < member.games.length; i++) {
-      if (member.games[i].win === false) {
+      if (member.games[i].win == false) {
         losses++;
       }
     }
     return losses;
-  }
+  };
+  $scope.getaveragescore = function(member){
+    var totalscore = 0;
+    for (var i = 0; i < member.games.length; i++) {
+      totalscore += member.games[i];
+    };
+    return totalscore / member.games.length;
+  };
 })

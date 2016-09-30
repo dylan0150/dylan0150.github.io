@@ -1,9 +1,3 @@
-<p>space</p>
-<p>space</p>
-<p>space</p>
-<p>space</p>
-<p>space</p>
-
 <table id="memberstable">
   <th>
     <td>Name</td>

@@ -3,19 +3,10 @@ app.controller('MembersController', function($scope, $routeParams) {
   $scope.params = $routeParams;
   $scope.members = [
     {
-      name: "John",
-      games: 24,
-      joindate: "01/11/2010"
+      firstname: "John",
+      lastname: "Doe"
+      games: 1,
+      joindate: "01/01/2010"
     },
-    {
-      name: "Alex",
-      games: 27,
-      joindate: "02/09/2009"
-    },
-    {
-      name: "Tony",
-      games: 19,
-      joindate: "04/05/2010"
-    }
   ]
 })

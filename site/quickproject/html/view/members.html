@@ -7,7 +7,7 @@
   <tbody ng-repeat="member in members">
     <tr>
       <td>{{ $index }}</td>
-      <td><a ng-href="#/members/{{$index}}">{{ member.name }}</a></td>
+      <td><a ng-href="#/members/{{$index}}">{{ member.firstname }} {{ member.lastname }}</a></td>
       <td>{{ member.games }}</td>
       <td>{{ member.joindate }}</td>
     </tr>

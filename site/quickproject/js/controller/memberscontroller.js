@@ -6,16 +6,16 @@ app.controller('MembersController', function($scope, $routeParams) {
       name: "John",
       games: 24,
       joindate: "01/01/2010",
-    };
+    },
     {
       name: "John",
       games: 24,
       joindate: "01/01/2010",
-    };
+    },
     {
       name: "John",
       games: 24,
       joindate: "01/01/2010",
-    };
+    }
   ]
 })

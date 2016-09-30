@@ -14,12 +14,12 @@
       <p>Joined: {{ members[params.id].joindate }}</p>
       <p>Games Played: {{ members[params.id].games.length }}</p>
       <p>Wins: {{ getwins(members[params.id]); }}</p>
-      <p>Losses: {{ getwins(members[params.id]); }}</p>
+      <p>Losses: {{ getlosses(members[params.id]); }}</p>
       <p>High Score: {{ gethighscore("score",members[params.id]); }} Against: {{ gethighscore("opponent",members[params.id]); }} On: {{ gethighscore("date",members[params.id]); }}</p>
       <p>Average Score: {{ getaveragescore(members[params.id]); }}</p>
     </div>
     <div class="col-sm-4">
-      
+
     </div>
   </div>
 

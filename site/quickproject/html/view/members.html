@@ -5,11 +5,11 @@
     <td><b>Join Date</b></td>
   </th>
   <tbody ng-repeat="member in members">
-    <tr>
-      <td><a href="#/members/{{$index}}">{{ $index }}</a></td>
-      <td><a href="#/members/{{$index}}">{{ member.name }}</a></td>
-      <td><a href="#/members/{{$index}}">{{ member.games }}</a></td>
-      <td><a href="#/members/{{$index}}">{{ member.joindate }}</a></td>
+    <tr ng-click="editmember(member);">
+      <td>{{ $index }}</td>
+      <td>{{ member.name }}</td>
+      <td>{{ member.games }}</td>
+      <td>{{ member.joindate }}</td>
     </tr>
   </tbody>
 </table>

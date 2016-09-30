@@ -4,12 +4,10 @@
     <td><b>No. of Games</b></td>
     <td><b>Join Date</b></td>
   </th>
-  <tbody>
-    <tr onclick="window.document.location='#/members/{{$index}}'">
-      <td>{{ $index }}</td>
-      <td>{{ member.name }}</td>
-      <td>{{ member.games }}</td>
-      <td>{{ member.joindate }}</td>
-    </tr>
-  </tbody>
+  <tr onclick="window.document.location='#/members/{{$index}}'">
+    <td>{{ $index }}</td>
+    <td>{{ member.name }}</td>
+    <td>{{ member.games }}</td>
+    <td>{{ member.joindate }}</td>
+  </tr>
 </table>

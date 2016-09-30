@@ -22,7 +22,7 @@ app.controller('MembersController', function($scope, $routeParams) {
     for (var i = 0; i < member.games.length; i++) {
       if (member.games[i].win) {
         if (member.games[i].score > highscore) {
-          var highscore = member.games[i].score;
+          highscore = member.games[i].score;
           var when = member.games[i].date;
           var who = member.games[i].opponent;
         }

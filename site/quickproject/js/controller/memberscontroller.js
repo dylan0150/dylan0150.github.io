@@ -5,17 +5,17 @@ app.controller('MembersController', function($scope, $routeParams) {
     {
       name: "John",
       games: 24,
-      joindate: "01/01/2010"
+      joindate: "01/11/2010"
     },
     {
-      name: "John",
-      games: 24,
-      joindate: "01/01/2010"
+      name: "Alex",
+      games: 27,
+      joindate: "02/09/2009"
     },
     {
-      name: "John",
-      games: 24,
-      joindate: "01/01/2010"
+      name: "Tony",
+      games: 19,
+      joindate: "04/05/2010"
     }
   ]
 })

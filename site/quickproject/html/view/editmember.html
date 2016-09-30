@@ -2,7 +2,22 @@
 
   <div class="row">
     <div class="col-sm-4">
-      <h3>Name: {{ currentmember.firstname }} {{ currentmember.lastname }}</h3>
+      <h3>Name: {{ members[params.id].firstname }} {{ members[params.id].lastname }}</h3>
+    </div>
+    <div class="col-sm-4">
+      <h3>Age: {{ members[params.id].age }}</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Games Played: {{ members[params.id].games.length }}</p>
+      <p>Joined: {{ members[params.id].joindate }}</p>
+      <p>High Score: {{ members[params.id].gethighscore(); }}</p>
+      <p>{{  }}</p>
+    </div>
+    <div class="col-sm-4">
+
     </div>
   </div>
 

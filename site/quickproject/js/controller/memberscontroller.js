@@ -5,9 +5,35 @@ app.controller('MembersController', function($scope, $routeParams) {
     {
       firstname: "John",
       lastname: "Doe",
-      games: 1,
-      joindate: "01/01/2010"
+      joindate: "01/01/2010",
+      age: 24,
+      games: [
+        {
+          score: "",
+          win: "",
+          date: "",
+        },
+      ],
+      this.gethighscore = function(){
+        var highscore = 0;
+        for (var i = 0; i < games.length; i++) {
+          if (games[i].win) {
+            if (games[i].score > highscore) {
+              highscore = games[i].score
+            }
+          }
+        };
+        return highscore;
+      };
+      this.getaveragescore = function(){
+
+      };
+      this.getwins = function(){
+
+      };
+      this.getlosses = function(){
+
+      };
     }
   ];
-  $scope.currentmember = $scope.members[$scope.params.id];
 })

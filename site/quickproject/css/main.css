@@ -1,14 +1,7 @@
 body {
   padding-top: 75px
 }
-
-table.#members {
-  width: 100%;
-  border-bottom: 1px solid black;
-  border-collapse: collapse;
-  margin: auto;
-}
-table.#games {
+table {
   width: 100%;
   border-bottom: 1px solid black;
   border-collapse: collapse;

@@ -27,6 +27,7 @@ app.controller('MembersController', function($scope, $routeParams) {
         }
       }
     };
+    console.log("this is running");
     switch (val) {
       case "score":
         return highscore;

@@ -14,8 +14,8 @@ app.controller('MembersController', function($scope, $routeParams) {
           date: "",
         },
       ],
-      setmembervals: function(){
-        alert("Hi!");
+      gethighscore: function(){
+        return "High Score!";
       }
     }
   ];

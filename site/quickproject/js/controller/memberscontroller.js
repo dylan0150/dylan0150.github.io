@@ -1,6 +1,7 @@
 app.controller('MembersController', function($scope, $routeParams) {
   $scope.name = 'MembersController';
   $scope.params = $routeParams;
+  var currentmember = $scope.params.id
   $scope.members = [
     {
       firstname: "John",

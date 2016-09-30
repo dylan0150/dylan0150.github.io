@@ -7,6 +7,6 @@ app.controller('MembersController', function($scope, $routeParams) {
       lastname: "Doe"
       games: 1,
       joindate: "01/01/2010"
-    },
+    }
   ]
 })

@@ -19,7 +19,21 @@
       <p>Average Score: {{ getaveragescore(members[params.id]); }}</p>
     </div>
     <div class="col-sm-4">
-
+      <button>Edit Details</button>
+      <table title="Last 10 Games" id="games">
+        <th>
+          <td>Opponent</td>
+          <td>Win</td>
+          <td>Score</td>
+        </th>
+        <tbody ng-repeat="game in members[params.id].games | limitTo:10">
+          <tr>
+            <td>{{ game.opponent }}</td>
+            <td>{{ checkwin(game); }}</td>
+            <td>{{ game.score }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 

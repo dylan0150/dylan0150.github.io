@@ -18,6 +18,15 @@ app.controller('MembersController', function($scope, $routeParams) {
     }
   ];
 
+  $scope.checkwin = function(game){
+    if (game.win == true){
+      return "Yes"
+    }
+    else {
+      return "No"
+    }
+  }
+
   $scope.gethighscore = function(val,member){
     var highscore = 0;
     for (var i = 0; i < member.games.length; i++) {

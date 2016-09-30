@@ -15,8 +15,26 @@ app.controller('MembersController', function($scope, $routeParams) {
         },
       ],
       gethighscore: function(){
-        return "High Score!";
-      }
+        var highscore = 0;
+        for (var i = 0; i < games.length; i++) {
+          if (games[i].win) {
+            if (games[i].score > highscore) {
+              highscore = games[i].score;
+            }
+          }
+        }
+        return {
+          score: highscore;
+        }
+      },
+      getaveragescore: function(){
+        var totalscore = 0;
+        for (var i = 0; i < games.length; i++) {
+          totalscore += games[i];
+        }
+        return Math.floor(totalscore / games[i].length);
+      },
+
     }
   ];
 })

@@ -14,7 +14,7 @@ app.controller('MembersController', function($scope, $routeParams) {
           date: "",
         },
       ],
-      this: setmembervals = function(){
+      setmembervals: function(){
         alert("Hi!");
       }
     }

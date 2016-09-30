@@ -1,0 +1,15 @@
+<table id="memberstable">
+  <th>
+    <td><b>Name</b></td>
+    <td><b>No. of Games</b></td>
+    <td><b>Join Date</b></td>
+  </th>
+  <tbody ng-repeat="member in members">
+    <tr onclick="window.document.location='#/members/{{$index}}'">
+      <td>{{ $index }}</td>
+      <td>{{ member.name }}</td>
+      <td>{{ member.games }}</td>
+      <td>{{ member.joindate }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -4,7 +4,7 @@ app.controller('MembersController', function($scope, $routeParams) {
   $scope.members = [
     {
       firstname: "John",
-      lastname: "Doe"
+      lastname: "Doe",
       games: 1,
       joindate: "01/01/2010"
     }

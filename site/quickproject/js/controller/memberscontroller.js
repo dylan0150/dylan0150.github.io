@@ -9,5 +9,5 @@ app.controller('MembersController', function($scope, $routeParams) {
       joindate: "01/01/2010"
     }
   ];
-  var currentmember = $scope.members[$scope.params.id];
+  $scope.currentmember = $scope.members[$scope.params.id];
 })

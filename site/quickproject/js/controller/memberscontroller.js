@@ -22,18 +22,18 @@ app.controller('MembersController', function($scope, $routeParams) {
               highscore = games[i].score
             }
           }
-        };
+        },
         return highscore;
-      };
+      },
       this.getaveragescore = function(){
 
-      };
+      },
       this.getwins = function(){
 
-      };
+      },
       this.getlosses = function(){
 
-      };
+      },
     }
   ];
 })

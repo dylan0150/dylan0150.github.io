@@ -1,13 +1,15 @@
-<table id="memberstable" ng-controller="MembersController" ng-repeat="member in members">
+<table id="memberstable" ng-controller="MembersController">
   <th>
     <td><b>Name</b></td>
     <td><b>No. of Games</b></td>
     <td><b>Join Date</b></td>
   </th>
-  <tr onclick="window.document.location='#/members/{{$index}}'">
-    <td>{{ $index }}</td>
-    <td>{{ member.name }}</td>
-    <td>{{ member.games }}</td>
-    <td>{{ member.joindate }}</td>
-  </tr>
+  <tbody ng-repeat="member in members">
+    <tr ng-click="window.document.location='#/members/{{$index}}'">
+      <td>{{ $index }}</td>
+      <td>{{ member.name }}</td>
+      <td>{{ member.games }}</td>
+      <td>{{ member.joindate }}</td>
+    </tr>
+  </tbody>
 </table>

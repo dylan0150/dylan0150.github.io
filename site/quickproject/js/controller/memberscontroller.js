@@ -26,7 +26,6 @@ app.controller('MembersController', function($scope, $routeParams) {
         var who = member.games[i].opponent;
       }
     };
-    console.log(highscore);
     switch (val) {
       case "score":
         return highscore;
@@ -62,6 +61,7 @@ app.controller('MembersController', function($scope, $routeParams) {
     for (var i = 0; i < member.games.length; i++) {
       totalscore += member.games[i];
     };
-    return totalscore / member.games.length;
+    var averagescore = totalscore / member.games.length;
+    return averagescore;
   };
 })

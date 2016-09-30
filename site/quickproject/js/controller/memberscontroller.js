@@ -17,30 +17,31 @@ app.controller('MembersController', function($scope, $routeParams) {
       ],
     }
   ];
+  $scope.gethighscore = function(val,member){
+    for (var i = 0; i < member.games.length; i++) {
+      if (member.games[i].win) {
+        if (member.games[i].score > highscore) {
+          var highscore = member.games[i].score;
+          var when = member.games[i].date;
+          var who = member.games[i].opponent;
+        }
+      }
+    };
+    switch (val) {
+      case "score":
+        return highscore;
+      break;
+      case "date":
+        return when;
+      break;
+      case "opponent":
+        return who;
+      break;
+    };
+  };
 })
 
-gethighscore = function(val,member){
-  for (var i = 0; i < member.games.length; i++) {
-    if (member.games[i].win) {
-      if (member.games[i].score > highscore) {
-        var highscore = member.games[i].score;
-        var when = member.games[i].date;
-        var who = member.games[i].opponent;
-      }
-    }
-  };
-  switch (val) {
-    case "score":
-      return highscore;
-    break;
-    case "date":
-      return when;
-    break;
-    case "opponent":
-      return who;
-    break;
-  };
-};
+
 
 getaveragescore = function(){
   var totalscore = 0;

@@ -1,7 +1,6 @@
 app.controller('MembersController', function($scope, $routeParams) {
   $scope.name = 'MembersController';
   $scope.params = $routeParams;
-  var currentmember = members[$scope.params.id];
   $scope.members = [
     {
       firstname: "John",
@@ -9,5 +8,6 @@ app.controller('MembersController', function($scope, $routeParams) {
       games: 1,
       joindate: "01/01/2010"
     }
-  ]
+  ];
+  var currentmember = $scope.members[$scope.params.id];
 })

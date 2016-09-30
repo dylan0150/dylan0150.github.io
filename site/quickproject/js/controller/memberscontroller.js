@@ -43,10 +43,10 @@ app.controller('MembersController', function($scope, $routeParams) {
   };
   $scope.getaveragescore = function(member){
     var totalscore = 0;
-    for (var i = 0; i < mamber.games.length; i++) {
-      totalscore += mamber.games[i];
+    for (var i = 0; i < member.games.length; i++) {
+      totalscore += member.games[i];
     }
-    return Math.floor(totalscore / games[i].length);
+    return totalscore / games[i].length;
   };
   $scope.getwins = function(member){
     var wins = 0

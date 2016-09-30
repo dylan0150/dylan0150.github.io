@@ -14,26 +14,7 @@ app.controller('MembersController', function($scope, $routeParams) {
           date: "",
         },
       ],
-      this.gethighscore = function(){
-        var highscore = 0;
-        for (var i = 0; i < games.length; i++) {
-          if (games[i].win) {
-            if (games[i].score > highscore) {
-              highscore = games[i].score
-            }
-          }
-        },
-        return highscore;
-      },
-      this.getaveragescore = function(){
-
-      },
-      this.getwins = function(){
-
-      },
-      this.getlosses = function(){
-
-      },
+      
     }
   ];
 })

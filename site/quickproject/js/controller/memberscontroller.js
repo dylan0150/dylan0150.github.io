@@ -40,7 +40,7 @@ gethighscore = function(val,member){
       return who;
     break;
   };
-},
+};
 
 getaveragescore = function(){
   var totalscore = 0;
@@ -48,4 +48,4 @@ getaveragescore = function(){
     totalscore += games[i];
   }
   return Math.floor(totalscore / games[i].length);
-},
+};

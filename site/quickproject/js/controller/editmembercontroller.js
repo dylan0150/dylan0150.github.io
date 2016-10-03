@@ -3,6 +3,8 @@ app.controller('EditMembersController', function($scope, $routeParams, $http) {
   $scope.params = $routeParams;
 
   $scope.update = function(){
-
+    $http.post(){
+      
+    }
   }
 })

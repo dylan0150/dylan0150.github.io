@@ -22,6 +22,10 @@ app.config(function ($routeProvider) {
       controller: 'EditMembersController',
       templateUrl: 'html/view/editmember.html'
     })
+    .when('/addnewmember/', {
+      controller: 'EditMembersController',
+      templateUrl: 'html/view/addmember.html'
+    })
     .when('/leaderboard', {
       controller: 'LeaderboardController',
       templateUrl: 'html/view/leaderboard.html'

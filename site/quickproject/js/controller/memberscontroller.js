@@ -99,5 +99,5 @@ app.controller('MembersController', function($scope, $routeParams, $http) {
     return averagescore;
   };
 
-  $http.get("/php/members.php").then(function(response){$scope.members.push(response.data.records)};);
+  
 })

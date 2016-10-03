@@ -1,12 +1,13 @@
-<div class="editmember" ng-controller="EditMembersController">
+<div class="editmember">
 
-  <div class="row">
+  <div class="row" ng-controller="MembersController">
     <div class="col-sm-4">
+      <h4>Update Member Details</h4>
       <h3>Member ID: {{ params.id }}</h3>
     </div>
   </div>
 
-  <form>
+  <form ng-controller="EditMembersController">
     <div class="row">
       <div class="col-sm-2">
         <p>First Name:</p>

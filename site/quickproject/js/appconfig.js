@@ -22,7 +22,7 @@ app.config(function ($routeProvider) {
       controller: 'EditMembersController',
       templateUrl: 'html/view/editmember.html'
     })
-    .when('/addnewmember/', {
+    .when('/addnewmember', {
       controller: 'EditMembersController',
       templateUrl: 'html/view/addmember.html'
     })

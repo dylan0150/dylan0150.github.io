@@ -100,4 +100,8 @@ app.controller('MembersController', function($scope, $routeParams, $http) {
     var averagescore = totalscore / member.games.length;
     return averagescore;
   };
+
+  $scope.getnewid = function(){
+    
+  }
 })

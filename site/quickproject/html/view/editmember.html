@@ -7,15 +7,21 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-4">
-      <form>
-        First Name: <input type="text" ng-model="firstname"> <br>
-        Last Name: <input type="text" ng-model="lastname"> <br>
-        Date of Birth: <input type="text" ng-model="dob"> <br>
-        Bio: <input type="text" ng-model="bio"> <br>
+    <form>
+      <div class="col-sm-2">
+        First Name:
+        Last Name:
+        Date of Birth:
+        Bio:
         <input type="button" value="submit" ng-click="submit();">
-      </form>
-    </div>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" ng-model="firstname"> <br>
+        <input type="text" ng-model="lastname"> <br>
+        <input type="text" ng-model="dob"> <br>
+        <input type="text" ng-model="bio"> <br>
+      </div>
+    </form>
   </div>
 
 </div>

@@ -5,12 +5,13 @@
       <h3>Name: {{ members[params.id].firstname }} {{ members[params.id].lastname }}</h3>
     </div>
     <div class="col-sm-4">
-      <h3>Age: {{ members[params.id].age }}</h3>
+      <h3>Member ID: {{ params.id }}</h3>
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-4">
+      <p>Age: {{ members[params.id].age }}</p>
       <p>Joined: {{ members[params.id].joindate }}</p>
       <p>Games Played: {{ members[params.id].games.length }}</p>
       <p>Wins: {{ getwins(members[params.id]); }}</p>

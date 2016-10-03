@@ -1,0 +1,16 @@
+<table id="members" ng-controller="MembersController">
+  <caption>Leaderboard</caption>
+  <th>
+    <td><b>Name</b></td>
+    <td><b>Average Score</b></td>
+    <td><b>Highest Score</b></td>
+  </th>
+  <tbody ng-repeat="member in members">
+    <tr>
+      <td>{{ $index }}</td>
+      <td><a ng-href="#/members/{{$index}}">{{ member.firstname }} {{ member.lastname }}</a></td>
+      <td>{{ member.getaveragescore(); }}</td>
+      <td>{{ member.gethighscore(); }}</td>
+    </tr>
+  </tbody>
+</table>

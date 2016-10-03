@@ -1,4 +1,4 @@
-//Jane and John are examples that have been added manually to the members Array. Normally this Array would simply be set = to the response.data.records rather than pushed but considered it too much of a committment of time to actually set up the SQL database required for that.
+//Jane and John are examples that have been added manually to the members Array.
 
 app.controller('MembersController', function($scope, $routeParams, $http) {
   $scope.name = 'MembersController';
@@ -9,6 +9,7 @@ app.controller('MembersController', function($scope, $routeParams, $http) {
       lastname: "Doe",
       joindate: "01/01/2010",
       age: 27,
+      bio: "Sample bio would go here if I could be bothered to write it.",
       games: [
         {
           score: "110",
@@ -23,6 +24,7 @@ app.controller('MembersController', function($scope, $routeParams, $http) {
       lastname: "Doe",
       joindate: "01/01/2010",
       age: 24,
+      bio: "Sample bio would go here if I could be bothered to write it.",
       games: [
         {
           score: "90",

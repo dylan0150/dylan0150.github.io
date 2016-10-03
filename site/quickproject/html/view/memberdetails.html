@@ -18,8 +18,9 @@
       <p>Losses: {{ getlosses(members[params.id]); }}</p>
       <p>High Score: {{ gethighscore("score",members[params.id]); }} Against: {{ gethighscore("opponent",members[params.id]); }} On: {{ gethighscore("date",members[params.id]); }}</p>
       <p>Average Score: {{ getaveragescore(members[params.id]); }}</p>
+      <br>
       <h5>Bio<h5>
-        <p>{{ members[params.id].bio }}
+      <p>{{ members[params.id].bio }}
     </div>
     <div class="col-sm-4">
       <a ng-href="#/editmember/{{params.id}}" class="btn btn-default">Edit Details</a>

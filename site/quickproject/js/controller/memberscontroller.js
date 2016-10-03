@@ -69,6 +69,7 @@ app.controller('MembersController', function($scope, $routeParams, $http) {
       case "opponent":
         return who;
       break;
+      default: return highscore;
     };
   };
 

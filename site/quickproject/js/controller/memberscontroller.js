@@ -101,7 +101,4 @@ app.controller('MembersController', function($scope, $routeParams, $http) {
     return averagescore;
   };
 
-  $scope.getnewid = function(){
-    
-  }
 })

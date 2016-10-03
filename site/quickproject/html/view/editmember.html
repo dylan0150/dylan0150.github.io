@@ -6,22 +6,46 @@
     </div>
   </div>
 
-  <div class="row">
-    <form>
+  <form>
+    <div class="row">
       <div class="col-sm-2">
-        First Name: <br>
-        Last Name: <br>
-        Date of Birth: <br>
-        Bio: <br>
-        <input type="button" value="submit" ng-click="submit();">
+        <p>First Name:</p>
       </div>
-      <div class="col-sm-3">
-        <input type="text" ng-model="firstname"> <br>
+      <div class="col-sm-4">
+        <input type="text" ng-model="firstname">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <p>Last Name:</p>
+      </div>
+      <div class="col-sm-4">
         <input type="text" ng-model="lastname"> <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <p>Date of Birth:</p>
+      </div>
+      <div class="col-sm-4">
         <input type="text" ng-model="dob"> <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <p>Bio:</p>
+      </div>
+      <div class="col-sm-4">
         <input type="text" ng-model="bio"> <br>
       </div>
-    </form>
-  </div>
+    </div>
+
+    <div class="row">
+      <input type="button" value="submit" ng-click="submit();">
+    </div>
+  </form>
 
 </div>

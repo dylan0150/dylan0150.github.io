@@ -19,7 +19,7 @@
       <p>Average Score: {{ getaveragescore(members[params.id]); }}</p>
     </div>
     <div class="col-sm-4">
-      <button ng-href="#/editmember/{{params.id}}">Edit Details</button>
+      <a ng-href="#/editmember/{{params.id}}" class="btn btn-default">Edit Details</a>
       <table title="Last 10 Games" id="games">
         <caption>Last 10 Games</caption>
         <th>

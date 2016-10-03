@@ -10,7 +10,7 @@
       <td>{{ $index }}</td>
       <td><a ng-href="#/members/{{$index}}">{{ member.firstname }} {{ member.lastname }}</a></td>
       <td>{{ getaveragescore(member); }}</td>
-      <td>{{ gethighscore(member); }}</td>
+      <td>{{ gethighscore(score,member); }}</td>
     </tr>
   </tbody>
 </table>

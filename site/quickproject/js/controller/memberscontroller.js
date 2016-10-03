@@ -1,7 +1,23 @@
-app.controller('MembersController', function($scope, $routeParams) {
+//Jane and John are examples that have been added manually to the members Array. Normally this Array would simply be set = to the response.data.records rather than pushed but considered it too much of a committment of time to actually set up the SQL database required for that.
+
+app.controller('MembersController', function($scope, $routeParams, $http) {
   $scope.name = 'MembersController';
   $scope.params = $routeParams;
   $scope.members = [
+    {
+      firstname: "Jane",
+      lastname: "Doe",
+      joindate: "01/01/2010",
+      age: 27,
+      games: [
+        {
+          score: "110",
+          win: true,
+          date: "01/01/2016",
+          opponent: "John Doe",
+        },
+      ],
+    },
     {
       firstname: "John",
       lastname: "Doe",
@@ -9,8 +25,8 @@ app.controller('MembersController', function($scope, $routeParams) {
       age: 24,
       games: [
         {
-          score: "15",
-          win: true,
+          score: "90",
+          win: false,
           date: "01/01/2016",
           opponent: "Jane Doe",
         },
@@ -20,20 +36,25 @@ app.controller('MembersController', function($scope, $routeParams) {
 
   $scope.checkwin = function(game){
     if (game.win == true){
-      return "Yes"
+      return "Yes";
+    }
+    else if (game.win == false){
+      return "No";
     }
     else {
-      return "No"
+      return "Tie";
     }
   }
 
   $scope.gethighscore = function(val,member){
     var highscore = 0;
+    var when = "n/a";
+    var who = "n/a";
     for (var i = 0; i < member.games.length; i++) {
       if (member.games[i].score > highscore) {
         highscore = member.games[i].score;
-        var when = member.games[i].date;
-        var who = member.games[i].opponent;
+        when = member.games[i].date;
+        who = member.games[i].opponent;
       }
     };
     switch (val) {
@@ -77,4 +98,6 @@ app.controller('MembersController', function($scope, $routeParams) {
     var averagescore = totalscore / member.games.length;
     return averagescore;
   };
+
+  $http.get("/php/members.php").then(function(response){$scope.members.push(response.data.records)};);
 })

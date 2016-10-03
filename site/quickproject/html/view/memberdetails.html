@@ -1,0 +1,43 @@
+<div class="viewmember" ng-controller="MembersController">
+
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Name: {{ members[params.id].firstname }} {{ members[params.id].lastname }}</h3>
+    </div>
+    <div class="col-sm-4">
+      <h3>Age: {{ members[params.id].age }}</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Joined: {{ members[params.id].joindate }}</p>
+      <p>Games Played: {{ members[params.id].games.length }}</p>
+      <p>Wins: {{ getwins(members[params.id]); }}</p>
+      <p>Losses: {{ getlosses(members[params.id]); }}</p>
+      <p>High Score: {{ gethighscore("score",members[params.id]); }} Against: {{ gethighscore("opponent",members[params.id]); }} On: {{ gethighscore("date",members[params.id]); }}</p>
+      <p>Average Score: {{ getaveragescore(members[params.id]); }}</p>
+    </div>
+    <div class="col-sm-4">
+      <button ng-href="#/editmember/{{params.id}}">Edit Details</button>
+      <table title="Last 10 Games" id="games">
+        <caption>Last 10 Games</caption>
+        <th>
+          <td>Opponent</td>
+          <td>Win</td>
+          <td>Score</td>
+        </th>
+        <tbody ng-repeat="game in members[params.id].games | limitTo:10">
+          <tr>
+            <td>{{ $index }}</td>
+            <td>{{ game.opponent }}</td>
+            <td>{{ checkwin(game); }}</td>
+            <td>{{ game.score }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>

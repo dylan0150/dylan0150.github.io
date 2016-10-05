@@ -10,7 +10,6 @@
 
   <div class="row">
     <div class="col-sm-6">
-      {{ setcurrentmembergames() }}
       <p>Date of Birth: {{ currentmember(params.id).dob }}</p>
       <p>Joined: {{ currentmember(params.id).joindate }}</p>
       <p>Games Played: {{ getnumgames(currentmember(params.id)) }}</p>
@@ -20,7 +19,7 @@
       <p>Average Score: {{ getaveragescore(params.id) }}</p>
       <br>
       <h4><b>Bio</b></h4>
-      <p></p>
+      <p>{{ currentmember(params.id).bio }}</p>
     </div>
     <div class="col-sm-4">
       <a ng-href="#/editmember/{{params.id}}" class="btn btn-default">Edit Details</a>

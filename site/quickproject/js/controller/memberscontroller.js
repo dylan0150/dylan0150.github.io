@@ -1,104 +1,124 @@
-//Jane and John are examples that have been added manually to the members Array.
-
 app.controller('MembersController', function($scope, $routeParams, $http) {
   $scope.name = 'MembersController';
   $scope.params = $routeParams;
-  $scope.members = [
-    {
-      firstname: "Jane",
-      lastname: "Doe",
-      joindate: "01/01/2010",
-      age: 27,
-      bio: "Sample bio would go here if I could be bothered to write it.",
-      games: [
-        {
-          score: "110",
-          win: true,
-          date: "01/01/2016",
-          opponent: "John Doe",
-        },
-      ],
-    },
-    {
-      firstname: "John",
-      lastname: "Doe",
-      joindate: "01/01/2010",
-      age: 24,
-      bio: "Sample bio would go here if I could be bothered to write it.",
-      games: [
-        {
-          score: "90",
-          win: false,
-          date: "01/01/2016",
-          opponent: "Jane Doe",
-        },
-      ],
-    }
-  ];
+  $scope.members = [];
+  $scope.games = [];
 
-  $scope.checkwin = function(game){
-    if (game.win == true){
-      return "Yes";
-    }
-    else if (game.win == false){
-      return "No";
-    }
-    else {
-      return "Tie";
-    }
-  }
+  $http.get("php/getmembers.php")
+    .then(function (response) {$scope.members = response.data.records});
 
-  $scope.gethighscore = function(val,member){
-    var highscore = 0;
-    var when = "n/a";
-    var who = "n/a";
-    for (var i = 0; i < member.games.length; i++) {
-      if (member.games[i].score > highscore) {
-        highscore = member.games[i].score;
-        when = member.games[i].date;
-        who = member.games[i].opponent;
+  $http.get("php/getgames.php")
+    .then(function (response) {$scope.games = response.data.records});
+
+  $scope.getmemberbyid = function(memberid){
+    for (var i = 0; i < $scope.members.length; i++) {
+      if ($scope.members[i].id == memberid) {
+        return $scope.members[i];
+      };
+    };
+  };
+
+  $scope.currentmember = function(id){
+    for (var i = 0; i < $scope.members.length; i++) {
+      if (id == $scope.members[i].id) {
+        return $scope.members[i];
       }
+    }
+  };
+
+  $scope.currentmembergames = function(id){
+    var temparray = [];
+    for (var i = 0; i < $scope.games.length; i++) {
+      if ($scope.currentmember(id).id == $scope.games[i].p1id) {
+        temparray.push({
+          score:$scope.games[i].p1score,
+          opponentscore:$scope.games[i].p2score,
+          opponentid:$scope.games[i].p2id,
+          opponentname:$scope.getmemberbyid($scope.games[i].p2id).firstname + " " + $scope.getmemberbyid($scope.games[i].p2id).lastname,
+          date:$scope.games[i].date,
+        });
+      };
+      if ($scope.currentmember(id).id == $scope.games[i].p2id) {
+        temparray.push({
+          score:$scope.games[i].p2score,
+          opponentscore:$scope.games[i].p1score,
+          opponentid:$scope.games[i].p1id,
+          opponentname:$scope.getmemberbyid($scope.games[i].p1id).firstname + " " + $scope.getmemberbyid($scope.games[i].p1id).lastname,
+          date:$scope.games[i].date,
+        });
+      };
     };
+    return temparray;
+  };
+
+  $scope.sortType = "id";
+  $scope.sortReverse = false;
+
+  $scope.gethighscore = function(id,val){
+    var highscore = 0;
+    var name = "";
+    var date = "";
+    for (var i = 0; i < $scope.currentmembergames(id).length; i++) {
+      if (highscore < Math.round($scope.currentmembergames(id)[i].score)) {
+        highscore = Math.round($scope.currentmembergames(id)[i].score);
+        name = $scope.currentmembergames(id)[i].opponentname;
+        date = $scope.currentmembergames(id)[i].date;
+      }
+    }
     switch (val) {
-      case "score":
-        return highscore;
+      case "score": return highscore;
       break;
-      case "date":
-        return when;
+      case "opponent": return name;
       break;
-      case "opponent":
-        return who;
+      case "date": return date;
       break;
-    };
+    }
+  };
+
+  $scope.getaveragescore = function(id){
+    var totalscore = 0;
+    for (var i = 0; i < $scope.currentmembergames(id).length; i++) {
+      totalscore = Math.round($scope.currentmembergames(id)[i].score) + totalscore;
+    }
+    return totalscore / $scope.currentmembergames(id).length;
+  };
+
+  $scope.getnumgames = function(){
+    return $scope.currentmembergames().length
   };
 
   $scope.getwins = function(member){
     var wins = 0;
-    for (var i = 0; i < member.games.length; i++) {
-      if (member.games[i].win) {
-        wins++;
-      }
-    }
+    for (var i = 0; i < $scope.games.length; i++) {
+      if (member.id == $scope.games[i].p1id) {
+        if ($scope.games[i].p1score < $scope.games[i].p2score){
+          wins++;
+        }
+      };
+      if (member.id == $scope.games[i].p2id) {
+        if ($scope.games[i].p2score < $scope.games[i].p1score){
+          wins++;
+        }
+      };
+    };
     return wins;
   };
 
   $scope.getlosses = function(member){
     var losses = 0;
-    for (var i = 0; i < member.games.length; i++) {
-      if (!member.games[i].win) {
-        losses++;
-      }
-    }
-    return losses;
-  };
-
-  $scope.getaveragescore = function(member){
-    var totalscore = 0;
-    for (var i = 0; i < member.games.length; i++) {
-      totalscore += member.games[i].score;
+    for (var i = 0; i < $scope.games.length; i++) {
+      if (member.id == $scope.games[i].p1id) {
+        if ($scope.games[i].p1score > $scope.games[i].p2score){
+          losses++;
+        }
+      };
+      if (member.id == $scope.games[i].p2id) {
+        if ($scope.games[i].p2score > $scope.games[i].p1score){
+          losses++;
+        }
+      };
     };
-    var averagescore = totalscore / member.games.length;
-    return averagescore;
+    return losses;
   };
 
 })

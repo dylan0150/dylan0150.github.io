@@ -25,3 +25,7 @@ tr:hover {
 form {
   margin: 25px;
 }
+.btn-xs {
+  width: 25px;
+  height: 25px;
+}

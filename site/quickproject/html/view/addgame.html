@@ -1,0 +1,63 @@
+<div class="editgame" ng-controller="GamesController">
+
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Add New Game</h3>
+      <h4>New Game ID: {{ games.length }}</h4>
+    </div>
+  </div>
+
+  <form ng-controller="GamesController">
+    <div class="row">
+      <div class="col-sm-2">
+        <p>Player 1 ID:</p>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" ng-model="p1id">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <p>Player 2 ID:</p>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" ng-model="p2id">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <p>Player 1 Score:</p>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" ng-model="p1score">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <p>Player 2 Score:</p>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" ng-model="p2score">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <p>Date:</p>
+      </div>
+      <div class="col-sm-4">
+        <input placeholder="YYYY-MM-DD" type="text" ng-model="date">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <input type="button" value="Submit New Game" ng-click="addgame();">
+      </div>
+    </div>
+  </form>
+
+</div>

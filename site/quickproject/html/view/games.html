@@ -1,0 +1,21 @@
+<a ng-href="#/addnewgame" class="btn btn-default">Add New Game</a>
+<table id="games" ng-controller="GamesController">
+  <caption>Recent Games</caption>
+  <th>
+    <td><b>Player 1</b></td>
+    <td><b>Player 2</b></td>
+    <td><b>Score</b></td>
+    <td><b>Winner</b></td>
+    <td><b>Date</b></td>
+  </th>
+  <tbody>
+    <tr ng-repeat="game in games | orderBy:sortType='date':sortReverse='false'">
+      <td>{{ game.id }}</td>
+      <td><a ng-href="#/members/{{game.p1id}}">{{ getmemberbyid(game.p1id).firstname }} {{ getmemberbyid(game.p1id).lastname }}</a></td>
+      <td><a ng-href="#/members/{{game.p2id}}">{{ getmemberbyid(game.p2id).firstname }} {{ getmemberbyid(game.p2id).lastname }}</a></td>
+      <td>{{ game.p1score }} : {{ game.p2score }}</td>
+      <td>{{ getwinner(game) }}</td>
+      <td>{{ game.date }}</td>
+    </tr>
+  </tbody>
+</table>

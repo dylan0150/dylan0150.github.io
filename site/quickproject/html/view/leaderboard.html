@@ -1,16 +1,16 @@
-<table id="members" ng-controller="MembersController">
+<table id="members" ng-controller="LeaderboardController">
   <caption>Leaderboard</caption>
   <th>
     <td><b>Name</b></td>
-    <td><b>Average Score</b></td>
-    <td><b>Highest Score</b></td>
+    <td><b><a ng-click="sortType='averagescore'; sortReverse=!sortReverse"><img class="btn btn-xs" src="image/icons/udbtn.png" alt="sort" /></a>Average Score</b></td>
+    <td><b><a ng-click="sortType='highscore'; sortReverse=!sortReverse"><img class="btn btn-xs" src="image/icons/udbtn.png" alt="sort" /></a>Highest Score</b></td>
   </th>
-  <tbody ng-repeat="member in members">
+  <tbody ng-repeat="member in leaderboard() | orderBy:sortType='averagescore':sortReverse | limitTo:10">
     <tr>
-      <td>{{ $index }}</td>
-      <td><a ng-href="#/members/{{$index}}">{{ member.firstname }} {{ member.lastname }}</a></td>
-      <td>{{ getaveragescore(member); }}</td>
-      <td>{{ gethighscore("score",member); }} (Against: {{ gethighscore("opponent",member); }} On: {{ gethighscore("date",member); }})</td>
+      <td>{{ member.id }}</td>
+      <td><a ng-href="#/members/{{member.id}}">{{ member.name }}</a></td>
+      <td>{{ member.averagescore }}</td>
+      <td>{{ member.highscore }}</td>
     </tr>
   </tbody>
 </table>

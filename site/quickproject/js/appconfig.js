@@ -10,6 +10,18 @@ app.config(function ($routeProvider) {
       controller: 'MainController',
       templateUrl: 'html/view/main.html'
     })
+    .when('/leaderboard', {
+      controller: 'LeaderboardController',
+      templateUrl: 'html/view/leaderboard.html'
+    })
+    .when('/games', {
+      controller: 'GamesController',
+      templateUrl: 'html/view/games.html'
+    })
+    .when('/addnewgame', {
+      controller: 'GamesController',
+      templateUrl: 'html/view/addgame.html'
+    })
     .when('/members', {
       controller: 'MembersController',
       templateUrl: 'html/view/members.html'
@@ -25,9 +37,5 @@ app.config(function ($routeProvider) {
     .when('/addnewmember', {
       controller: 'EditMembersController',
       templateUrl: 'html/view/addmember.html'
-    })
-    .when('/leaderboard', {
-      controller: 'LeaderboardController',
-      templateUrl: 'html/view/leaderboard.html'
     })
 });

@@ -1,42 +1,44 @@
 <div class="viewmember" ng-controller="MembersController">
-
   <div class="row">
-    <div class="col-sm-4">
-      <h3>Name: {{ members[params.id].firstname }} {{ members[params.id].lastname }}</h3>
+    <div class="col-sm-6">
+      <h3>Name: {{ currentmember(params.id).firstname }} {{ currentmember(params.id).lastname }}</h3>
     </div>
     <div class="col-sm-4">
-      <h3>Member ID: {{ params.id }}</h3>
+      <h3>Member ID: {{ currentmember(params.id).id }}</h3>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm-4">
-      <p>Age: {{ members[params.id].age }}</p>
-      <p>Joined: {{ members[params.id].joindate }}</p>
-      <p>Games Played: {{ members[params.id].games.length }}</p>
-      <p>Wins: {{ getwins(members[params.id]); }}</p>
-      <p>Losses: {{ getlosses(members[params.id]); }}</p>
-      <p>High Score: {{ gethighscore("score",members[params.id]); }} Against: {{ gethighscore("opponent",members[params.id]); }} On: {{ gethighscore("date",members[params.id]); }}</p>
-      <p>Average Score: {{ getaveragescore(members[params.id]); }}</p>
+    <div class="col-sm-6">
+      {{ setcurrentmembergames() }}
+      <p>Date of Birth: {{ currentmember(params.id).dob }}</p>
+      <p>Joined: {{ currentmember(params.id).joindate }}</p>
+      <p>Games Played: {{ getnumgames(currentmember(params.id)) }}</p>
+      <p>Wins: {{ getwins(currentmember(params.id)) }}</p>
+      <p>Losses: {{ getlosses(currentmember(params.id)) }}</p>
+      <p>High Score: {{ gethighscore(params.id,"score") }}, Against: {{ gethighscore(params.id,"opponent") }}, On: {{ gethighscore(params.id,"date") }}</p>
+      <p>Average Score: {{ getaveragescore(params.id) }}</p>
       <br>
       <h4><b>Bio</b></h4>
-      <p>{{ members[params.id].bio }}</p>
+      <p></p>
     </div>
     <div class="col-sm-4">
       <a ng-href="#/editmember/{{params.id}}" class="btn btn-default">Edit Details</a>
       <table title="Last 10 Games" id="games">
         <caption>Last 10 Games</caption>
         <th>
-          <td>Opponent</td>
-          <td>Win</td>
           <td>Score</td>
+          <td>Opponent</td>
+          <td>Opponent's Score</td>
+          <td>Date</td>
         </th>
-        <tbody ng-repeat="game in members[params.id].games | limitTo:10">
+        <tbody ng-repeat="game in currentmembergames(params.id) | orderBy:sortType='date':sortReverse">
           <tr>
-            <td>{{ $index }}</td>
-            <td>{{ game.opponent }}</td>
-            <td>{{ checkwin(game); }}</td>
+            <td></td>
             <td>{{ game.score }}</td>
+            <td><a ng-href="#/members/{{ game.opponentid }}">{{ game.opponentname }}</a></td>
+            <td>{{ game.opponentscore }}</td>
+            <td>{{ game.date }}</td>
           </tr>
         </tbody>
       </table>

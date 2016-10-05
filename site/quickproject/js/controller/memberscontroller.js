@@ -83,8 +83,16 @@ app.controller('MembersController', function($scope, $routeParams, $http) {
     return totalscore / $scope.currentmembergames(id).length;
   };
 
-  $scope.getnumgames = function(){
-    return $scope.currentmembergames().length
+  $scope.getnumgames = function(member){
+    var num = 0;
+    for (var i = 0; i < $scope.games.length; i++) {
+      if (member.id == $scope.games[i].p1id) {
+        num++;
+      } else if (member.id == $scope.games[i].p2id) {
+        num++;
+      }
+    };
+    return num;
   };
 
   $scope.getwins = function(member){

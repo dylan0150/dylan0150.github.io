@@ -10,7 +10,7 @@
     <tr ng-repeat="member in members | orderBy:sortType='id':sortReverse">
       <td>{{ member.id }}</td>
       <td><a ng-href="#/members/{{member.id}}">{{ member.firstname }} {{ member.lastname }}</a></td>
-      <td>{{ getnumgames(member) }}</td>
+      <td>{{ getnumgames(member); }}</td>
       <td>{{ member.joindate }}</td>
     </tr>
   </tbody>

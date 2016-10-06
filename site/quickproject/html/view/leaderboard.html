@@ -5,7 +5,7 @@
     <td><b><a ng-click="sortType='averagescore'; sortReverse=!sortReverse"><img class="btn btn-xs" src="image/icons/udbtn.png" alt="sort" /></a>Average Score</b></td>
     <td><b><a ng-click="sortType='highscore'; sortReverse=!sortReverse"><img class="btn btn-xs" src="image/icons/udbtn.png" alt="sort" /></a>Highest Score</b></td>
   </th>
-  <tbody ng-repeat="member in leaderboard() | orderBy:sortType='averagescore':sortReverse | limitTo:10">
+  <tbody ng-repeat="member in leaderboard() | orderBy:sortType:sortReverse | limitTo:10">
     <tr>
       <td>{{ member.id }}</td>
       <td><a ng-href="#/members/{{member.id}}">{{ member.name }}</a></td>

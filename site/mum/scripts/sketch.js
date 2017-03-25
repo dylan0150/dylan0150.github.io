@@ -1,10 +1,5 @@
-var fancy, plain, textpoints = [], allpoints = [], frame = 0, n = 0;
-var c = {
-  x:0,
-  y:0
-}
-var message = ["I just wanted...","...to say...","...thank you!","You are the best...","...mum I could have.","And I love you...","...more than...","...I can put...","...into these words.","So here is...","...a giant heart."]
-
+var fancy, plain, textpoints = [], allpoints = [], frame = 0, n = 0, heart = false, s = 0;
+var message = ["I just wanted...","...to say...","...thank you!","You are the best...","...mum I could have.","And I love you...","...more than...","...I can put...","...into these words.","So here is...","...a giant heart...","...to say thank you...","..instead!"]
 function preload() {
   plain = loadFont("fonts/Quicksand-Regular.otf")
   fancy = loadFont("fonts/AlexBrush-Regular.ttf")
@@ -23,14 +18,23 @@ function draw() {
   background(51);
   drawText();
   drawPoints();
+  drawHeart()
   if (frame % 400 == 0) {
     n++
     if (n < message.length) {
       var string  = message[n]
       textpoints  = textParse(string, 50, 400)
       giveTargets()
-    } else {
+    } else if (n == message.length) {
       flee()
+      heart = true;
+    } else if (n == message.length + 1){
+      var string = message[0]
+      textpoints = textParse(string, 50, 400)
+      heart = false;
+      giveTargets()
+    } else {
+      n = 0
     }
   }
 }
@@ -50,7 +54,6 @@ var drawText = function() {
 
 var drawPoints = function() {
   for (var i = 0; i < allpoints.length; i++) {
-    allpoints[i].seek()
     allpoints[i].update()
     allpoints[i].show()
   }
@@ -81,15 +84,52 @@ var giveTargets = function() {
       allpoints[i].target.y = allpoints[n].target.y
     }
   }
+  for (var i = 0; i < allpoints.length; i++) {
+    allpoints[i].ddx += ((Math.random()*2)-1)*15
+    allpoints[i].ddy += ((Math.random()*2)-1)*15
+  }
 }
 
 var flee = function() {
   for (var i = 0; i < allpoints.length; i++) {
     var p = allpoints[i]
-    p.target.x = Math.floor((Math.random()*2)-1)*1240*2
-    p.target.y = Math.floor((Math.random()*2)-1)*720*2
+    if (Math.random() > 0.5) {
+      p.target.x = Math.random()*1240 + 1240
+    } else {
+      p.target.x = -Math.random()*1240
+    }
+    if (Math.random() > 0.5) {
+      p.target.y = Math.random()*720 + 720
+    } else {
+      p.target.y = -Math.random()*720
+    }
   }
 }
+
+var drawHeart = function() {
+  var x = 620
+  var y = 260
+  var w = 400
+  var h = 300
+  var n1 = 100
+  var n2 = 90
+  var n3 = 270
+  s += 0.002
+  if (heart) {
+    w *= s; h *= s; n1 *= s; n2 *= s; n3 *= s
+    noFill()
+    beginShape()
+    vertex(x,y)
+    quadraticVertex(x-n1,y-n1,x-w/2,y)
+    quadraticVertex(x-n3,y+n2,x,y+h)
+    quadraticVertex(x+n3,y+n2,x+w/2,y)
+    quadraticVertex(x+n1,y-n1,x,y)
+    endShape()
+  } else {
+    s = 0
+  }
+}
+
 
 var textParse = function(string, x, y) {
   textFont(plain);
@@ -120,9 +160,11 @@ var TextPoint = function(x,y,tx,ty) {
   this.show = function() {
     stroke(255);
     strokeWeight(3);
-    point(this.x-c.x,this.y-c.y)
+    point(this.x,this.y)
   }
   this.update = function() {
+    this.seek()
+    this.avoid()
     this.dx += this.ddx
     this.dy += this.ddy
     this.x += this.dx
@@ -147,8 +189,16 @@ var TextPoint = function(x,y,tx,ty) {
     }
     ddx *= this.accel
     ddy *= this.accel
-
     this.ddx += ddx
     this.ddy += ddy
+  }
+  this.avoid = function() {
+    var dx = mouseX - this.x
+    var dy = mouseY - this.y
+    var d = Math.sqrt((dx*dx)+(dy*dy))
+    if (d < 70) {
+      this.ddx -= dx/15
+      this.ddy -= dy/15
+    }
   }
 }

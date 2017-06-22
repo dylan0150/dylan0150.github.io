@@ -1,1 +1,5 @@
 HOME
+
+<div class="tab" ng-repeat="tab in tabs">
+  <button ng-click="state.go(tab.state)">{{tab.name}}</button>
+</div>

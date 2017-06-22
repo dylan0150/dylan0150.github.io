@@ -14,6 +14,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
+    .state('booking', {
+      url: '/booking',
+      templateUrl: 'templates/booking.html',
+      controller: 'bookingCtrl',
+      resolve: {
+
+      }
+    })
+
   $urlRouterProvider
     .otherwise('/home')
 })

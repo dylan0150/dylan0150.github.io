@@ -1,0 +1,24 @@
+<div class="field" ng-hide="field.hidden">
+
+  <div ng-if="field.type == 'text'" class="form-group {{field.type}}" ng-class="{ 'has-error' : $form[field.name].$invalid && !$form[field.name].$pristine }">
+    <label for="{{field.name}}">{{field.label}}</label>
+    <input type="text" class="form-control" name="{{field.name}}" ng-model="field.value" ng-model-options="{allowInvalid: true}" ng-change="change()" ng-disabled="field.disabled" ng-required="field.required" ng-valid="field.valid">
+    <p ng-show="field.error" class="help-block">{{field.errormsg}}</p>
+    <p ng-show="!field.error && field.helpmsg != ''" class="form-text text-muted">{{field.helpmsg}}</p>
+  </div>
+
+  <div ng-if="field.type == 'email'" class="form-group {{field.type}}" ng-class="{ 'has-error' : $form[field.name].$invalid && !$form[field.name].$pristine }">
+    <label for="{{field.name}}">{{field.label}}</label>
+    <input type="email" class="form-control" name="{{field.name}}" ng-model="field.value" ng-model-options="{allowInvalid: true}" ng-change="change()" ng-disabled="field.disabled" ng-required="field.required" ng-valid="field.valid">
+    <p ng-show="field.error" class="help-block">{{field.errormsg}}</p>
+    <p ng-show="!field.error && field.helpmsg != ''" class="form-text text-muted">{{field.helpmsg}}</p>
+  </div>
+
+  <div ng-if="field.type == 'password'" class="form-group {{field.type}}" ng-class="{ 'has-error' : $form[field.name].$invalid && !$form[field.name].$pristine }">
+    <label for="{{field.name}}">{{field.label}}</label>
+    <input type="email" class="form-control" name="{{field.name}}" ng-model="field.value" ng-model-options="{allowInvalid: true}" ng-change="change()" ng-disabled="field.disabled" ng-required="field.required" ng-valid="field.valid">
+    <p ng-show="field.error" class="help-block">{{field.errormsg}}</p>
+    <p ng-show="!field.error && field.helpmsg != ''" class="form-text text-muted">{{field.helpmsg}}</p>
+  </div>
+
+</div>

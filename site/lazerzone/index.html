@@ -25,14 +25,39 @@
     <!-- Angular JS App -->
       <!-- Config -->
       <script type="text/javascript" src="js/app.js"></script>
-      <!-- Controllers -->
-      <script type="text/javascript" src="js/controller/home.js"></script>
-      <script type="text/javascript" src="js/controller/booking.js"></script>
+      <!-- Directives -->
+      <script type="text/javascript" src="directives/field/dir-field.js"></script>
+      <script type="text/javascript" src="directives/footer/dir-footer.js"></script>
+      <script type="text/javascript" src="directives/form/dir-form.js"></script>
+      <script type="text/javascript" src="directives/header/dir-header.js"></script>
+      <script type="text/javascript" src="directives/messages/dir-messages.js"></script>
+      <script type="text/javascript" src="directives/modal/dir-modal.js"></script>
+      <script type="text/javascript" src="directives/navigation/dir-navigation.js"></script>
+      <!-- Service -->
+      <script type="text/javascript" src="js/service/Auth.js"></script>
+      <script type="text/javascript" src="js/service/Booking.js"></script>
+      <script type="text/javascript" src="js/service/Message.js"></script>
+      <script type="text/javascript" src="js/service/Nav.js"></script>
+      <!-- Controller -->
+      <script type="text/javascript" src="js/controller/login.js"></script>
+      <script type="text/javascript" src="js/controller/bookings.js"></script>
+      <script type="text/javascript" src="js/controller/members.js"></script>
+      <script type="text/javascript" src="js/controller/staff.js"></script>
     <!-- End Angular App -->
 
     <!-- JS -->
   </head>
   <body ng-app="app">
-    <ui-view></ui-view>
+
+    <dir-header></dir-header>
+
+    <div class="main">
+      <ui-view></ui-view>
+    </div>
+
+    <dir-footer></dir-footer>
+
+    <dir-modal></dir-modal>
+
   </body>
 </html>

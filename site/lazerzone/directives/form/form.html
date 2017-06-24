@@ -1,0 +1,11 @@
+<form name="{{form.name}}" class="{{form.type}}" method="{{form.method}}" ng-submit="submit($event)">
+
+  <div class="form-body">
+    <dir-field ng-repeat="field in form.fields | orderBy:'field.order'" field="field"></dir-field>
+  </div>
+
+  <div class="form-controls">
+    <input ng-repeat="control in form.controls" class="{{control.type}}" type="{{control.type}}" value="{{control.value}}" ng-click="control.click()" ng-disabled="control.disabled || form.disabled">
+  </div>
+
+</form>
